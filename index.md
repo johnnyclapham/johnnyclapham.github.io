@@ -4,6 +4,7 @@ Please check back later for updates!
 # Git
 Please feel free to peruse my Git repo at https://github.com/johnnyclapham
 
+![](assets/johnnyclapham.jpg)
 
 
 

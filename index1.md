@@ -1,4 +1,4 @@
-# Page is under construction.
+<!-- # Page is under construction.
 Please check back later for updates!
 
 [About Me](about.md)
@@ -8,7 +8,7 @@ Please check back later for updates!
 Please feel free to peruse my Git repo at https://github.com/johnnyclapham
 
 <!-- ![](assets/johnnyclapham.jpg) -->
-<img src="assets/johnnyclapham.jpg" alt="johnnyclapham" width="200"/>
+<img src="assets/johnnyclapham.jpg" alt="johnnyclapham" width="200"/> -->
 
 
 

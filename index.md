@@ -1,8 +1,7 @@
 # Page is under construction.
 Please check back later for updates!
 
-# Pages:
-- [About](about.md)
+[About Me](about.md)
 
 
 # Git

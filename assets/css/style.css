@@ -1,0 +1,27 @@
+@import "";
+
+.column {
+    float: left;
+    width: 50%;
+  }
+
+#mytag {
+  border: 2px solid powderblue;
+}
+
+.body{
+  font-family: 'Courier New', Courier, monospace;
+  border: 2px solid red;
+}
+
+.p{
+  font-family: 'Courier New', Courier, monospace;
+  border: 2px solid yellow;
+}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

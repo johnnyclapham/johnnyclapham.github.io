@@ -1,5 +1,5 @@
 // webpack.config.js
 module.exports = {
-  mode: 'development’,
+  mode: 'development',
   entry: './src/tool.js',
 };

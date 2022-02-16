@@ -21,7 +21,6 @@ console.log("point1");
 import { initializeApp } from 'firebase/app/';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite/';
 
-// const config = require('./fire_config');
 console.log(String(fire_config));
 
 console.log("point2");

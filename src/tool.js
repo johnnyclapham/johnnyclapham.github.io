@@ -20,29 +20,24 @@ d3.select("#container")
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+// import { initializeApp } from 'firebase/app';
+// import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var result = reader.readAsText("../secrets.txt");
+// var result = reader.readAsText("../secrets.txt");
 
-const firebaseConfig = {
-  apiKey: result,
-  authDomain: "anaximander-ee3e9.firebaseapp.com",
-  databaseURL: "https://anaximander-default-rtdb.firebaseio.com",
-  projectId: "anaximander",
-  storageBucket: "anaximander.appspot.com",
-  messagingSenderId: "890606455610",
-  appId: "1:890606455610:web:f4695c20635863b7675e03",
-  measurementId: "G-0W5GTLPT5E"
-};
+const config = require('./fire_config');
+console.log(String(config));
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(config);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 

@@ -14,30 +14,20 @@ d3.select("#container")
           .duration(10000)
           .style("background-color", "red");
 
+import { fire_config } from './fire_config.js'
 
+console.log("point1");
 
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from 'firebase/app/';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite/';
 
-// import { initializeApp } from 'firebase/app';
-// import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+// const config = require('./fire_config');
+console.log(String(fire_config));
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// var result = reader.readAsText("../secrets.txt");
-
-const config = require('./fire_config');
-console.log(String(config));
+console.log("point2");
 
 // Initialize Firebase
-const app = initializeApp(config);
+const app = initializeApp(fire_config);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 

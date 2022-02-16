@@ -1,0 +1,29 @@
+{
+  "name": "johnnyclapham.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "d3.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnnyclapham/johnnyclapham.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnnyclapham/johnnyclapham.github.io/issues"
+  },
+  "homepage": "https://github.com/johnnyclapham/johnnyclapham.github.io#readme",
+  "devDependencies": {
+    "webpack": "^5.69.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "d3": "^7.3.0",
+    "firebase": "^9.6.6"
+  }
+}

@@ -17,8 +17,12 @@ d3.select("#container")
 
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -42,10 +46,16 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-// Get a list of users from your database
-async function getUsers(db) {
-    const users = collection(db, 'User');
-    const userSnapshot = await getDocs(User);
-    const userList = userSnapshot.docs.map(doc => doc.data());
-    return userList;
-  }
+// // Get a list of users from your database
+// async function getUsers(db) {
+//     const users = collection(db, 'User');
+//     const userSnapshot = await getDocs(User);
+//     const userList = userSnapshot.docs.map(doc => doc.data());
+//     return userList;
+//   }
+
+const ref = db.ref('User');
+
+ref.orderByChild('height').on('child_added', (snapshot) => {
+  console.log(snapshot.key + ' :: ' + snapshot.val().latitude );
+});

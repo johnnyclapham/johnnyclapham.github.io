@@ -25,10 +25,29 @@ function app() {
             snapshot.forEach(function(childSnapshot) {
                 
                 var key = childSnapshot.key;
-                var childData = childSnapshot.child("rssi").val();
+                var childRSSI = childSnapshot.child("rssi").val();
+                var childLAT = childSnapshot.child("latitude").val();
+                var childLONG = childSnapshot.child("longitude").val();
 
-                console.log("key: "+key+" data: "+childData);
-                userDict[key] = childData;
+                console.log("key: "+key+" RSSI: "+childRSSI);
+                userDict[key] = childRSSI;
+                // document.getElementById("objects").append(childData);
+
+                // linebreak = document.createElement('br');
+                // document.getElementById("objects").appendChild(linebreak);
+
+                // document.getElementById("userList").createElement("LI");
+                // appendChild(document.createTextNode(childData));
+
+                var node=document.createElement("LI");
+                var textnode=document.createTextNode("rssi:   {"+childRSSI+"}   @   lat/lng:   {"+childLAT+" , "+childLONG+"}");
+                node.appendChild(textnode);
+                document.getElementById("userList").appendChild(node);
+                
+                // ('<li>'+childData+'</li>');
+                // '<li>Scooter</li>'
+
+                // appendChild(document.createTextNode('Scooter'));
             });
         } else {
             console.log("No data available");

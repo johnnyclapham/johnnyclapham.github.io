@@ -4,7 +4,11 @@ import { getDatabase, ref, child, get } from "firebase/database";
 import { fire_config } from './fire_config.js'
 // Note: We are using firebase database; not firebase firestore!
 
-function app() {
+
+
+function app() {      
+    var userDict = {};
+
     d3.select("#container")
         .transition()
         .duration(1000)
@@ -12,19 +16,30 @@ function app() {
 
     const firebaseConfig = fire_config;
     const app = initializeApp(firebaseConfig);
-
     // Get a reference to the database service
     const dbRef = ref(getDatabase());
     // Get user entry and print
-    get(child(dbRef, 'User/3')).then((snapshot) => {
+    // get(child(dbRef, 'User/3')).then((snapshot) => {
+    get(child(dbRef, 'User/')).then((snapshot) => {
         if (snapshot.exists()) {
-            console.log(snapshot.val());
+            snapshot.forEach(function(childSnapshot) {
+                
+                var key = childSnapshot.key;
+                var childData = childSnapshot.child("rssi").val();
+
+                console.log("key: "+key+" data: "+childData);
+                userDict[key] = childData;
+            });
         } else {
             console.log("No data available");
         }
+        return userDict;
     }).catch((error) => {
         console.error(error);
     });
+
+    console.log("yam critical");
+    console.log("dictionary: "+userDict[0]);
 
 }
 

@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "d3": "^7.3.0",
-    "firebase": "^9.6.6"
+    "firebase": "^9.6.6",
+    "google-maps": "^4.3.3"
   }
 }

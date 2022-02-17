@@ -43,3 +43,11 @@ const app = initializeApp(fire_config);
 // ref.orderByChild('height').on('child_added', (snapshot) => {
 //   console.log(snapshot.key + ' :: ' + snapshot.val().latitude );
 // });
+
+
+// import {Loader, LoaderOptions} from 'google-maps';
+// // const options: LoaderOptions = {/* todo */};
+var gms = require('../google_maps_secrets.txt');
+var text = fs.readFileSync("./mytext.txt", 'utf-8');
+
+  

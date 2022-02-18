@@ -76,7 +76,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _exp1_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./exp1.js */ \"./src/exp1.js\");\n// Note: Tutorial with documentation https://www.tutorialsteacher.com/d3js/select-dom-element-using-d3js\n\n\n\n\nvar myElem = document.getElementById('get_button');\nmyElem.onclick = function() {\n\t(0,_exp1_js__WEBPACK_IMPORTED_MODULE_0__.app)()\n}\nvar myElem = document.getElementById('flush_button');\nmyElem.onclick = function() {\n\t(0,_exp1_js__WEBPACK_IMPORTED_MODULE_0__.flush)()\n}\n\n\n\n\n\n//# sourceURL=webpack://johnnyclapham.github.io/./src/tool.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _exp1_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./exp1.js */ \"./src/exp1.js\");\n// Note: Tutorial with documentation https://www.tutorialsteacher.com/d3js/select-dom-element-using-d3js\n\n\n\n// import {\n//   initMap\n// } from './exp2.js'\n\n// initMap()\n\nvar myElem = document.getElementById('get_button');\nmyElem.onclick = function() {\n\t(0,_exp1_js__WEBPACK_IMPORTED_MODULE_0__.app)()\n}\nvar myElem = document.getElementById('flush_button');\nmyElem.onclick = function() {\n\t(0,_exp1_js__WEBPACK_IMPORTED_MODULE_0__.flush)()\n}\n// var myElem = document.getElementById('map_button');\n// myElem.onclick = function() {\n// \tinitMap()\n// }\n\n\n\n\n\n//# sourceURL=webpack://johnnyclapham.github.io/./src/tool.js?");
 
 /***/ }),
 

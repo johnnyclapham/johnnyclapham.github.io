@@ -3,6 +3,18 @@
 <head>
   <title>Anaximander</title>
   <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    function initMap() {
+      console.log("google map init test")
+      const uluru = { lat: -25.344, lng: 131.036 };
+      const map = new google.maps.Map(document.getElementById("map"), { zoom: 4, center: uluru, });
+      const marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+      });
+    }
+  </script>
 </head>
 
 <style>
@@ -21,20 +33,25 @@
   </div>
 
 
-  <div>
-    <p id="statisticsText">
-      # objects retrieved: N/A <br> 
-      Retrieve time taken: N/A <br> 
-      Data last retrieved:  N/A </p>
+
+  <div id="map">
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFEZ8WcW0xuNvw3plvCpbaGwQcBagTjJI&callback=initMap&libraries=&v=weekly"
+      async></script>
   </div>
 
-  <hr /> <!-- Divider -->
+
+
 
   <div>
-    <button id="get_button" type="button" onclick="app(); this.onclick=null;">
+    <p id="statisticsText">
+      # objects retrieved: N/A <br>
+      Retrieve time taken: N/A <br>
+      Data last retrieved: N/A </p>
+    <button id="get_button" type="button" onclick="app();">
       Get Data
     </button>
-    <button id="flush_button" type="button" onclick="flush(); this.onclick=null;">
+    <button id="flush_button" type="button" onclick="flush();">
       Flush Data
     </button>
   </div>

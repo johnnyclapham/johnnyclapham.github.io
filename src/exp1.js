@@ -36,12 +36,13 @@ function app() {
                 node.appendChild(textnode);
                 document.getElementById("userList").appendChild(node);
 
+                // Note: Update Statitistics
                 numObjects++;
-                document.getElementById("infonumret").innerHTML=String("# objects retrieved: "+numObjects);
                 currTime = new Date().toLocaleString();
-                document.getElementById("infolastret").innerHTML=String("Data last retrieved: "+currTime);
                 retTime = Date.now() - start;
-                document.getElementById("infotimeret").innerHTML=String("Retrieve time taken: "+retTime+"ms");
+                // Note: Set statistics values
+                document.getElementById("statisticsText").innerHTML=String("# objects retrieved: "+ numObjects +" <br> Retrieve time taken: "+ retTime +" ms <br> Data last retrieved:  "+ currTime +"");
+
             });
         } else {
             // Note: In case of empty database
@@ -59,7 +60,8 @@ function flush() {
     while (userList.firstChild){
         userList.removeChild(userList.firstChild);
     }
-    document.getElementById("infonumret").innerHTML=String("# objects retrieved: N/A");
+    
+    document.getElementById("statisticsText").innerHTML=String("# objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved:  N/A");
 }
 
 export {

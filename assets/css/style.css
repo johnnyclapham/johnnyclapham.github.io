@@ -5,6 +5,22 @@
     width: 50%;
   }
 
+.tight{
+  padding:0px; 
+  margin:0px;
+}
+
+  .full {
+    float: left;
+    width: 100%;
+  }
+
+.stats {
+  padding:0px; 
+  margin:0px; 
+
+}
+
 #mytag {
   border: 2px solid powderblue;
 }
@@ -18,6 +34,12 @@
   font-family: 'Courier New', Courier, monospace;
   border: 2px solid yellow;
 }
+
+p 
+{ 
+   /* padding:0px; 
+   margin:0px;  */
+} 
   
   /* Clear floats after the columns */
   .row:after {

@@ -2,7 +2,6 @@
 
 <head>
   <title>Anaximander</title>
-  <!-- <script type="text/javascript" src="../src/exp1.js"></script> -->
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
@@ -15,26 +14,29 @@
 </style>
 
 <body>
-  <h1 id="title1">Tool Development </h1>
-  <p id="home_link"><a href="../index.html">Return to Homepage</a></p>
-  <p>This page hosts the Anaximander data visualization tool. This tool currently being developed.</p>
+  <div>
+    <h1 id="title1">Tool Development </h1>
+    <p id="home_link"><a href="../index.html">Return to Homepage</a></p>
+    <p>This page hosts the Anaximander data visualization tool. This tool currently being developed.</p>
+  </div>
+
+
+  <div>
+    <p id="statisticsText">
+      # objects retrieved: N/A <br> 
+      Retrieve time taken: N/A <br> 
+      Data last retrieved:  N/A </p>
+  </div>
 
   <hr /> <!-- Divider -->
 
-  <div class="column">
+  <div>
     <button id="get_button" type="button" onclick="app(); this.onclick=null;">
       Get Data
     </button>
     <button id="flush_button" type="button" onclick="flush(); this.onclick=null;">
       Flush Data
     </button>
-  </div>
-
-  <!-- <hr /> -->
-  <div class="column">
-    <p id="infonumret" ># objects retrieved: N/A</p>
-    <p id="infotimeret">Retrieve time taken: N/A</p>
-    <p id="infolastret">Data last retrieved: N/A</p>
   </div>
 
   <hr /> <!-- Divider -->

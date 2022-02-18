@@ -7,11 +7,13 @@ import { fire_config } from './fire_config.js'
 
 
 function app() {
+    //Note: First we flush data in case we are reloading
+    flush();
 
-    // d3.select("#container")
-    //     .transition()
-    //     .duration(1000)
-    //     .style("background-color", "red");
+    var currTime,retTime,numObjects=0;
+    var start = Date.now();
+
+
 
     const firebaseConfig = fire_config;
     const app = initializeApp(firebaseConfig);
@@ -33,6 +35,13 @@ function app() {
                 var textnode = document.createTextNode("rssi:   {" + childRSSI + "}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}");
                 node.appendChild(textnode);
                 document.getElementById("userList").appendChild(node);
+
+                numObjects++;
+                document.getElementById("infonumret").innerHTML=String("# objects retrieved: "+numObjects);
+                currTime = new Date().toLocaleString();
+                document.getElementById("infolastret").innerHTML=String("Data last retrieved: "+currTime);
+                retTime = Date.now() - start;
+                document.getElementById("infotimeret").innerHTML=String("Retrieve time taken: "+retTime+"ms");
             });
         } else {
             // Note: In case of empty database
@@ -50,6 +59,7 @@ function flush() {
     while (userList.firstChild){
         userList.removeChild(userList.firstChild);
     }
+    document.getElementById("infonumret").innerHTML=String("# objects retrieved: N/A");
 }
 
 export {

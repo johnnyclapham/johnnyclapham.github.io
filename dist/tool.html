@@ -3,6 +3,7 @@
 <head>
   <title>Anaximander</title>
   <!-- <script type="text/javascript" src="../src/exp1.js"></script> -->
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <style>
@@ -14,28 +15,36 @@
 </style>
 
 <body>
-  <h1 id="title1">Tool</h1>
-  <p id="home_link">Link: <a href="../index.html">Go Home</a></p>
+  <h1 id="title1">Tool Development </h1>
+  <p id="home_link"><a href="../index.html">Return to Homepage</a></p>
+  <p>This page hosts the Anaximander data visualization tool. This tool currently being developed.</p>
 
   <hr /> <!-- Divider -->
 
-  <p>This page will host WIP Anaximander Tool.</p>
+  <div class="column">
+    <button id="get_button" type="button" onclick="app(); this.onclick=null;">
+      Get Data
+    </button>
+    <button id="flush_button" type="button" onclick="flush(); this.onclick=null;">
+      Flush Data
+    </button>
+  </div>
 
-  <!-- Note: Create our buttons -->
-  <button id="get_button" type="button" onclick="app(); this.onclick=null;">
-    Get Data
-  </button>
-  <button id="flush_button" type="button" onclick="flush(); this.onclick=null;">
-    Flush Data
-  </button>
+  <!-- <hr /> -->
+  <div class="column">
+    <p id="infonumret" ># objects retrieved: N/A</p>
+    <p id="infotimeret">Retrieve time taken: N/A</p>
+    <p id="infolastret">Data last retrieved: N/A</p>
+  </div>
 
   <hr /> <!-- Divider -->
 
+  <!-- Note: We display our data in an order list -->
   <ol id="userList">
   </ol>
-  
+
   <hr /> <!-- Divider -->
-  
+
   <!-- Note: Start our script -->
   <script src="main.js"></script>
 </body>

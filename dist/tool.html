@@ -2,6 +2,7 @@
 
 <head>
   <title>Anaximander</title>
+  <!-- <script type="text/javascript" src="../src/exp1.js"></script> -->
 </head>
 
 <style>
@@ -15,24 +16,27 @@
 <body>
   <h1 id="title1">Tool</h1>
   <p id="home_link">Link: <a href="../index.html">Go Home</a></p>
-  <hr />
-  <p>This page will host WIP Anaximander Tool. 11</p>
-  <p></p>
-  <p></p>
-  <hr />
 
-  <div id="container"></div>
-  <hr />
-  <p id="objects">
-    hello
-  </p>
+  <hr /> <!-- Divider -->
+
+  <p>This page will host WIP Anaximander Tool.</p>
+
+  <!-- Note: Create our buttons -->
+  <button id="get_button" type="button" onclick="app(); this.onclick=null;">
+    Get Data
+  </button>
+  <button id="flush_button" type="button" onclick="flush(); this.onclick=null;">
+    Flush Data
+  </button>
+
+  <hr /> <!-- Divider -->
+
   <ol id="userList">
-    <li>Coffee</li>
-    <li>Tea</li>
-    <li>Milk</li>
   </ol>
-  <hr />
-  <svg style="width:300; height:300px"></svg>
+  
+  <hr /> <!-- Divider -->
+  
+  <!-- Note: Start our script -->
   <script src="main.js"></script>
 </body>
 

@@ -6,64 +6,56 @@ import { fire_config } from './fire_config.js'
 
 
 
-function app() {      
-    var userDict = {};
+function app() {
 
-    d3.select("#container")
-        .transition()
-        .duration(1000)
-        .style("background-color", "red");
+    // d3.select("#container")
+    //     .transition()
+    //     .duration(1000)
+    //     .style("background-color", "red");
 
     const firebaseConfig = fire_config;
     const app = initializeApp(firebaseConfig);
     // Get a reference to the database service
     const dbRef = ref(getDatabase());
     // Get user entry and print
-    // get(child(dbRef, 'User/3')).then((snapshot) => {
     get(child(dbRef, 'User/')).then((snapshot) => {
         if (snapshot.exists()) {
-            snapshot.forEach(function(childSnapshot) {
-                
+            snapshot.forEach(function (childSnapshot) {
+                //Note: childSnapshot is our user object
                 var key = childSnapshot.key;
                 var childRSSI = childSnapshot.child("rssi").val();
                 var childLAT = childSnapshot.child("latitude").val();
                 var childLONG = childSnapshot.child("longitude").val();
-
-                console.log("key: "+key+" RSSI: "+childRSSI);
-                userDict[key] = childRSSI;
-                // document.getElementById("objects").append(childData);
-
-                // linebreak = document.createElement('br');
-                // document.getElementById("objects").appendChild(linebreak);
-
-                // document.getElementById("userList").createElement("LI");
-                // appendChild(document.createTextNode(childData));
-
-                var node=document.createElement("LI");
-                var textnode=document.createTextNode("rssi:   {"+childRSSI+"}   @   lat/lng:   {"+childLAT+" , "+childLONG+"}");
+                //Note: Log all our values
+                console.log("key: " + key + " RSSI: " + childRSSI);
+                //Note: Currently, we add all data to our html list
+                var node = document.createElement("LI");
+                var textnode = document.createTextNode("rssi:   {" + childRSSI + "}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}");
                 node.appendChild(textnode);
                 document.getElementById("userList").appendChild(node);
-                
-                // ('<li>'+childData+'</li>');
-                // '<li>Scooter</li>'
-
-                // appendChild(document.createTextNode('Scooter'));
             });
         } else {
+            // Note: In case of empty database
             console.log("No data available");
         }
-        return userDict;
     }).catch((error) => {
         console.error(error);
     });
+}
 
-    console.log("yam critical");
-    console.log("dictionary: "+userDict[0]);
-
+function flush() {
+    //Note: Remove all data from list
+    var userList = document.getElementById("userList");
+    //Note: Iterate through all html <ol> children and delete
+    while (userList.firstChild){
+        userList.removeChild(userList.firstChild);
+    }
 }
 
 export {
-    app
+    // Note: Add our functions to this export!
+    app,
+    flush
 }
 
 

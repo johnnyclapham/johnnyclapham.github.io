@@ -3,7 +3,7 @@
 import {
   app,
   flush
-} from './exp1.js'
+} from './firebase.js'
 
 // import {
 //   initMap

@@ -1,57 +1,147 @@
 @import "";
-
-.column {
+.column1 {
     float: left;
-    width: 50%;
-  }
-
-.tight{
-  padding:0px; 
-  margin:0px;
+    width: 70%;
 }
 
-  .full {
+.column2 {
+    float: left;
+    width: 30%;
+}
+
+.tight {
+    padding: 0px;
+    margin: 0px;
+}
+
+.full {
     float: left;
     width: 100%;
-  }
+}
 
 .stats {
-  padding:0px; 
-  margin:0px; 
+    padding: 0px;
+    margin: 0px;
+}
 
+#welcome {
+    background-color: #C0C0C0;
+    border: 2px solid powderblue;
+}
+
+.data {
+    font-family: Courier, Arial, Helvetica;
 }
 
 #mytag {
-  border: 2px solid powderblue;
+    border: 2px solid powderblue;
 }
 
-.body{
-  font-family: 'Courier New', Courier, monospace;
-  border: 2px solid red;
+.body {
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid red;
 }
 
-.p{
-  font-family: 'Courier New', Courier, monospace;
-  border: 2px solid yellow;
+body {
+    /* text-align: justify */
+    /* background: black; */
+    max-width: 750px
 }
 
-p 
-{ 
-   /* padding:0px; 
+
+/* p {
+    padding-bottom: 10cm;
+} */
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.p {
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid yellow;
+}
+
+p {
+    /* padding:0px; 
    margin:0px;  */
-} 
-  
-  /* Clear floats after the columns */
-  .row:after {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
+}
+
 
 /* Set the size of the div element that contains the map */
+
 #map {
-  height: 200px;
-  /* The height is 400 pixels */
-  width: 100%;
-  /* The width is the width of the web page */
+    height: 200px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+}
+
+
+/* navigation below (fron w3schools) */
+
+
+/* Add a black background color to the top navigation */
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+
+/* Style the links inside the navigation bar */
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Arial (sans-serif);
+}
+
+
+/* Change the color of links on hover */
+
+.topnav a:hover {
+    /* background-color: #ddd; */
+    background-color: #008d07;
+    color: black;
+}
+
+
+/* Add a color to the active/current link */
+
+.topnav a.active {
+    /* background-color: #04AA6D; */
+    color: white;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
 }

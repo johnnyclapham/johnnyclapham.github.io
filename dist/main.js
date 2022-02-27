@@ -70,13 +70,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"indexFunction\": () => (/* binding */ indexFunction)\n/* harmony export */ });\n/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ \"./node_modules/d3/src/index.js\");\n\n\nfunction indexFunction() {\n    document.getElementById('abouttext').innerHTML = \"About New\";\n    \n}\n\n\n\n\n\n\n\n\n//# sourceURL=webpack://johnnyclapham.github.io/./src/index.js?");
+
+/***/ }),
+
 /***/ "./src/tool.js":
 /*!*********************!*\
   !*** ./src/tool.js ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _firebase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./firebase.js */ \"./src/firebase.js\");\n// Note: Tutorial with documentation https://www.tutorialsteacher.com/d3js/select-dom-element-using-d3js\n\n\n\n// import {\n//   initMap\n// } from './exp2.js'\n\n// initMap()\n\nvar myElem = document.getElementById('get_button');\nmyElem.onclick = function() {\n\t(0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.app)()\n}\nvar myElem = document.getElementById('flush_button');\nmyElem.onclick = function() {\n\t(0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.flush)()\n}\n// var myElem = document.getElementById('map_button');\n// myElem.onclick = function() {\n// \tinitMap()\n// }\n\n\n\n\n\n//# sourceURL=webpack://johnnyclapham.github.io/./src/tool.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _firebase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./firebase.js */ \"./src/firebase.js\");\n/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.js */ \"./src/index.js\");\n// Note: Tutorial with documentation https://www.tutorialsteacher.com/d3js/select-dom-element-using-d3js\n\n\n\n// import {\n//   initMap\n// } from './exp2.js'\n\n// initMap()\n\nvar myElem0 = document.getElementById('get_button');\nmyElem0.onclick = function() {\n    (0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.app)()\n}\nvar myElem1 = document.getElementById('flush_button');\nmyElem1.onclick = function() {\n    (0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.flush)()\n}\n\n;\n\nvar myElem2 = document.getElementById('testJSbutton');\nmyElem2.onclick = function() {\n        (0,_index_js__WEBPACK_IMPORTED_MODULE_1__.indexFunction)()\n    }\n    // var myElem = document.getElementById('map_button');\n    // myElem.onclick = function() {\n    // \tinitMap()\n    // }\n\n//# sourceURL=webpack://johnnyclapham.github.io/./src/tool.js?");
 
 /***/ }),
 

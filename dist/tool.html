@@ -1,71 +1,82 @@
 <html>
 
 <head>
-  <title>Anaximander</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Anaximander</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 
-  <script>
-    function initMap() {
-      console.log("google map init test")
-      const uluru = { lat: -25.344, lng: 131.036 };
-      const map = new google.maps.Map(document.getElementById("map"), { zoom: 4, center: uluru, });
-      const marker = new google.maps.Marker({
-        position: uluru,
-        map: map,
-      });
-    }
-  </script>
+    <script>
+        function initMap() {
+            console.log("google map init test")
+            const uluru = {
+                lat: -25.344,
+                lng: 131.036
+            };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: uluru,
+            });
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+            });
+        }
+    </script>
 </head>
 
 <style>
-  #container {
-    height: 100px;
-    width: 100px;
-    background-color: black;
-  }
+    #container {
+        height: 100px;
+        width: 100px;
+        background-color: black;
+    }
 </style>
 
 <body>
-  <div>
-    <h1 id="title1">Tool Development </h1>
-    <p id="home_link"><a href="../index.html">Return to Homepage</a></p>
-    <p>This page hosts the Anaximander data visualization tool. This tool is currently being developed for CSCI 780: Data Visualization.</p>
-  </div>
 
-
-
-  <div id="map">
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFEZ8WcW0xuNvw3plvCpbaGwQcBagTjJI&callback=initMap&libraries=&v=weekly"
-      async></script> 
-  </div>
+    <div class="topnav">
+        <a href="https://johnnyclapham.github.io">Home</a>
+        <a href="https://github.com/johnnyclapham">Git Home</a>
+    </div>
+    <div>
+        <h1 id="title1">Tool Development </h1>
+        <p id="home_link"><a href="../index.html">Return to Homepage</a></p>
+        <p>This page hosts the Anaximander data visualization tool. This tool is currently being developed for CSCI 780: Data Visualization.</p>
+    </div>
 
 
 
 
-  <div>
-    <p id="statisticsText">
-      # objects retrieved: N/A <br>
-      Retrieve time taken: N/A <br>
-      Data last retrieved: N/A </p>
-    <button id="get_button" type="button" onclick="app();">
+
+    <div id="map">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFEZ8WcW0xuNvw3plvCpbaGwQcBagTjJI&callback=initMap&libraries=&v=weekly" async></script>
+    </div>
+
+
+
+
+    <div>
+        <p class="data" id="statisticsText">
+            # objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
+        <button id="get_button" type="button" onclick="app();">
       Get Data
     </button>
-    <button id="flush_button" type="button" onclick="flush();">
+        <button id="flush_button" type="button" onclick="flush();">
       Flush Data
     </button>
-  </div>
+    </div>
 
-  <hr /> <!-- Divider -->
+    <hr />
+    <!-- Divider -->
 
-  <!-- Note: We display our data in an order list -->
-  <ol id="userList">
-  </ol>
+    <!-- Note: We display our data in an order list -->
+    <ol class="data" id="userList">
+    </ol>
 
-  <hr /> <!-- Divider -->
+    <hr />
+    <!-- Divider -->
 
-  <!-- Note: Start our script -->
-  <script src="main.js"></script>
+    <!-- Note: Start our script -->
+    <script src="main.js"></script>
 </body>
 
 </html>

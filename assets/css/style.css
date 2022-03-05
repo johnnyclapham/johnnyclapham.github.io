@@ -1,31 +1,4 @@
 @import "";
-.center {
-    margin: auto;
-    width: 90%;
-    /* border: 5px solid #FFFF00; */
-    padding: 10px;
-}
-
-.column_set {
-    padding-bottom: 200px;
-}
-
-.column_left {
-    text-align: justify;
-    float: left;
-    width: 65%;
-    padding-right: 1%;
-    /* padding-left: 4%; */
-}
-
-.column_right {
-    float: left;
-    width: 29%;
-    padding-bottom: 5px;
-    /* padding-bottom: 150px; */
-    padding-left: 4%;
-}
-
 .tight {
     padding: 0px;
     margin: 0px;
@@ -65,15 +38,11 @@
     margin: auto;
 }
 
-
-/*body {
-    /* text-align: justify */
-
-
-/* background: black; */
-
-
-/* max-width: 750px }*/
+body {
+    text-align: justify;
+    /* background: black; */
+    /* max-width: 1400px; */
+}
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
@@ -128,17 +97,32 @@ p {
 
 /* navigation below (fron w3schools) */
 
+#wm_link_img {
+    max-width: 5px;
+    overflow: hidden;
+}
+
 
 /* Add a black background color to the top navigation */
 
 .topnav {
-    background-color: #333;
+    width: 100%;
+    background-color: #115740;
+    border-radius: 8px;
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
+}
+
+
+/* The animation code */
+
+@keyframes big_text {
+    from {
+        font-size: 17px;
+    }
+    to {
+        font-size: 23px;
+    }
 }
 
 
@@ -146,21 +130,24 @@ p {
 
 .topnav a {
     float: left;
-    color: #f2f2f2;
+    /* color: #115740; */
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    font-family: Arial (sans-serif);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: font-size 200ms;
 }
 
 
 /* Change the color of links on hover */
 
 .topnav a:hover {
-    /* background-color: #ddd; */
-    background-color: #008d07;
-    color: black;
+    border-radius: 25px;
+    /* color: #F0B323; */
+    color: #F0B323;
+    font-size: 19px;
 }
 
 
@@ -173,4 +160,41 @@ p {
     margin-right: auto;
     margin-left: auto;
     text-align: center;
+    border-radius: 8px;
+}
+
+.center {
+    margin: auto;
+    width: 90%;
+    /* border: 5px solid #FFFF00; */
+    padding: 15px;
+    max-width: 1400px;
+}
+
+.column_set {
+    width: 100%;
+    padding-bottom: 200px;
+}
+
+.column_left {
+    text-align: justify;
+    float: left;
+    width: 63%;
+    padding-right: 1%;
+    padding-left: 14px;
+    /* background-color: #f3f3f3; */
+    background-color: #1157401b;
+    border-radius: 15px;
+}
+
+.column_right {
+    float: left;
+    width: 33%;
+    padding-bottom: 5px;
+    /* padding-bottom: 150px; */
+    padding-left: 1%;
+}
+
+.page_block {
+    background-color: #505050;
 }

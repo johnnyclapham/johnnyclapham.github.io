@@ -6,14 +6,12 @@ import { fire_config } from './fire_config.js'
 
 
 
-function app() {
+function pull_data() {
     //Note: First we flush data in case we are reloading
-    flush();
+    flush_data();
 
-    var currTime,retTime,numObjects=0;
+    var currTime, retTime, numObjects = 0;
     var start = Date.now();
-
-
 
     const firebaseConfig = fire_config;
     const app = initializeApp(firebaseConfig);
@@ -22,7 +20,7 @@ function app() {
     // Get user entry and print
     get(child(dbRef, 'User/')).then((snapshot) => {
         if (snapshot.exists()) {
-            snapshot.forEach(function (childSnapshot) {
+            snapshot.forEach(function(childSnapshot) {
                 //Note: childSnapshot is our user object
                 var key = childSnapshot.key;
                 var childRSSI = childSnapshot.child("rssi").val();
@@ -41,7 +39,7 @@ function app() {
                 currTime = new Date().toLocaleString();
                 retTime = Date.now() - start;
                 // Note: Set statistics values
-                document.getElementById("statisticsText").innerHTML=String("# objects retrieved: "+ numObjects +" <br> Retrieve time taken: "+ retTime +" ms <br> Data last retrieved:  "+ currTime +"");
+                document.getElementById("statisticsText").innerHTML = String("# objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
 
             });
         } else {
@@ -53,23 +51,19 @@ function app() {
     });
 }
 
-function flush() {
+function flush_data() {
     //Note: Remove all data from list
     var userList = document.getElementById("userList");
     //Note: Iterate through all html <ol> children and delete
-    while (userList.firstChild){
+    while (userList.firstChild) {
         userList.removeChild(userList.firstChild);
     }
-    
-    document.getElementById("statisticsText").innerHTML=String("# objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved:  N/A");
+
+    document.getElementById("statisticsText").innerHTML = String("# objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved:  N/A");
 }
 
 export {
     // Note: Add our functions to this export!
-    app,
-    flush
+    pull_data,
+    flush_data
 }
-
-
-
-

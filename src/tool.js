@@ -5,11 +5,10 @@ import {
     flush_data
 } from './firebase.js'
 
-// import {
-//   initMap
-// } from './exp2.js'
 
-// initMap()
+import {
+    indexFunction
+} from './index.js'
 
 var get_button = document.getElementById('get_button');
 get_button.onclick = function() {
@@ -20,26 +19,7 @@ flush_button.onclick = function() {
     flush_data()
 }
 
-// var test_button = document.getElementById('test_button');
-// test_button.onclick = function() {
-//     test_button()
-// }
-
-import {
-    indexFunction
-} from './index.js'
-
-// var myElem2 = document.getElementById('testJSbutton');
-// myElem2.onclick = function() {
-//         indexFunction()
-//     }
-
 var test_button = document.getElementById('test_button');
 test_button.onclick = function() {
     indexFunction()
 }
-
-// var myElem = document.getElementById('map_button');
-// myElem.onclick = function() {
-// 	initMap()
-// }

@@ -21,5 +21,5 @@ flush_button.onclick = function() {
 
 var test_button = document.getElementById('test_button');
 test_button.onclick = function() {
-    indexFunction()
+    indexSFunction()
 }

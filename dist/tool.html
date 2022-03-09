@@ -3,24 +3,6 @@
 <head>
     <title>Anaximander</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-
-    <script>
-        function initMap() {
-            console.log("google map init test")
-            const uluru = {
-                lat: -25.344,
-                lng: 131.036
-            };
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 4,
-                center: uluru,
-            });
-            const marker = new google.maps.Marker({
-                position: uluru,
-                map: map,
-            });
-        }
-    </script>
 </head>
 
 <style>
@@ -52,7 +34,7 @@
         <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly" async></script> -->
         <!-- Our JS map call (note the key is restricted and API calls
             are manually limited by self-imposed quotas) -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrDAcPqqdS5Ph5cDmyDbwa0pd6bb9syg&callback=initMap&libraries=&v=weekly" async></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrDAcPqqdS5Ph5cDmyDbwa0pd6bb9syg&libraries=visualization" async></script>
     </div>
 
 
@@ -61,15 +43,13 @@
     <div>
         <p class="data" id="statisticsText">
             # objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
-        <button id="get_button" type="button" onclick="app();">
-      Get Data
-    </button>
-        <button id="flush_button" type="button" onclick="flush();">
-      Flush Data
-    </button>
-        <button id="test_button" type="button" onclick="flush();">
-        test
-      </button>
+        <!-- <button id="get_button" type="button" onclick="app();">Get Data</button>
+        <button id="flush_button" type="button" onclick="flush();">Flush Data</button> -->
+        <!-- <button id="init_map_button" type="button" onclick="flush();">Initialize GoogleMap</button> -->
+        <!-- <button id="init_map_button" type="button" onclick="initMap();"</button>-->
+        <button id="get_button" type="button">1Get Data</button>
+        <button id="flush_button" type="button">1Flush Data</button>
+        <button id="init_map_button" type="button">1Initialize GoogleMap</button>
     </div>
 
     <hr />

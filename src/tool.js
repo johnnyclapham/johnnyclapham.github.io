@@ -4,9 +4,9 @@ import { map } from 'd3';
 import {
     pull_data,
     flush_data,
-    plot_data
+    plot_data,
+    setHeat
 } from './firebase.js'
-
 
 import {
     indexFunction
@@ -29,4 +29,10 @@ var test_button = document.getElementById('init_map_button');
 test_button.onclick = function() {
     // indexFunction()
     initMap();
+}
+
+var heat_button = document.getElementById('set_heat_button');
+heat_button.onclick = function() {
+    // indexFunction()
+    // setHeat();
 }

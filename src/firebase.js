@@ -2,11 +2,14 @@ import * as d3 from 'd3';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, child, get, Database } from "firebase/database";
 import { fire_config } from './fire_config.js'
+import { setHeat } from './map.js'
 // Note: We are using firebase database; not firebase firestore!
 
 
 
 function pull_data() {
+    var heatMapData = [];
+
     //Note: First we flush data in case we are reloading
     flush_data();
 
@@ -46,6 +49,8 @@ function pull_data() {
                 // Note: Set statistics values
                 document.getElementById("statisticsText").innerHTML = String("# objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
 
+                // Note: Add data to our heatMapData var
+                heatMapData.push({ location: new google.maps.LatLng(childLAT, childLONG), weight: 2 });
             });
         } else {
             // Note: In case of empty database
@@ -54,6 +59,8 @@ function pull_data() {
         //Note: After all objects have been iterated through
         // Do something
         console.log("The yam has landed, hoorah!");
+        setHeat(heatMapData);
+        // setHeat();
     }).catch((error) => {
         console.error(error);
     });

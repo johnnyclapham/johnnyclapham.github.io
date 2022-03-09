@@ -7,8 +7,8 @@ import { fire_config } from './fire_config.js'
 function initMap() {
     console.log("new google map initialization")
     const mshall = {
-        lat: 37.2701704,
-        lng: -76.7139122
+        lat: 37.27014788306701,
+        lng: -76.71179824260022
     };
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 17,

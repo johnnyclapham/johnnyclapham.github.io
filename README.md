@@ -1,4 +1,4 @@
-# johnnyclapham.github.io/dist/tool.html
+# Anaximander RSSI Heatmap Visualization Tool
 
 Network users must have reliable connection quality to the local network infrastructure in order to meet the requirements of daily modern life. The Wi-Fi Received Signal Strength Indicator (RSSI) is the measurement of this connection quality between the user device, and network Access Point (AP). Unfortunately, it is currently difficult for users to locate physical area zones with strong or weak RSSI. This means that users are left with limited options when they find themselves in an area with a weak network connection.
 

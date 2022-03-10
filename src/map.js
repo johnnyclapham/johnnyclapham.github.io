@@ -44,7 +44,7 @@ function changeGradient(heatmap) {
 }
 
 function changeRadius(heatmap) {
-    heatmap.set("radius", heatmap.get("radius") ? null : 20);
+    heatmap.set("radius", heatmap.get("radius") ? null : 80);
 }
 
 function setHeat(heatMapData) {

@@ -49,8 +49,10 @@ function pull_data() {
                 // Note: Set statistics values
                 document.getElementById("statisticsText").innerHTML = String("# objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
 
+                // Note: Normalize our RSSI to be on scale {0-1}
+                var normalized_childRSSI = (childRSSI - 29) / (120 - 29);
                 // Note: Add data to our heatMapData var
-                heatMapData.push({ location: new google.maps.LatLng(childLAT, childLONG), weight: 2 });
+                heatMapData.push({ location: new google.maps.LatLng(childLAT, childLONG), weight: normalized_childRSSI });
             });
         } else {
             // Note: In case of empty database

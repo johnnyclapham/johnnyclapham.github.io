@@ -1,16 +1,15 @@
 // Note: Tutorial with documentation https://www.tutorialsteacher.com/d3js/select-dom-element-using-d3js
 
-import { map } from 'd3';
+// import { map } from 'd3';
 import {
     pull_data,
     flush_data,
-    plot_data,
-    setHeat
+    log_data
 } from './firebase.js'
 
-import {
-    indexFunction
-} from './index.js'
+// import {
+//     indexFunction
+// } from './index.js'
 
 import {
     initMap
@@ -31,8 +30,7 @@ test_button.onclick = function() {
     initMap();
 }
 
-var heat_button = document.getElementById('set_heat_button');
-heat_button.onclick = function() {
-    // indexFunction()
-    // setHeat();
+var log_data_button = document.getElementById('log_data_button');
+log_data_button.onclick = function() {
+    log_data();
 }

@@ -25,10 +25,6 @@
         <p>This page hosts the Anaximander data visualization tool. This tool is currently being developed for CSCI 780: Data Visualization.</p>
     </div>
 
-
-
-
-
     <div id="map" class="google-map">
         <!-- Google's JS maps example: -->
         <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly" async></script> -->
@@ -37,31 +33,21 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrDAcPqqdS5Ph5cDmyDbwa0pd6bb9syg&libraries=visualization" async></script>
     </div>
 
-
-
-
     <div>
-        <p class="data" id="statisticsText">
-            # objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
-        <!-- <button id="get_button" type="button" onclick="app();">Get Data</button>
-        <button id="flush_button" type="button" onclick="flush();">Flush Data</button> -->
-        <!-- <button id="init_map_button" type="button" onclick="flush();">Initialize GoogleMap</button> -->
-        <!-- <button id="init_map_button" type="button" onclick="initMap();"</button>-->
+        <p class="data" id="statisticsText"># objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
         <button id="get_button" type="button">Get Data</button>
         <button id="flush_button" type="button">Flush Data</button>
         <button id="init_map_button" type="button">Initialize GoogleMap</button>
-        <button id="set_heat_button" type="button">Initialize Heatmap</button>
+        <button id="log_data_button" type="button">Log Data</button>
     </div>
 
     <hr />
-    <!-- Divider -->
 
     <!-- Note: We display our data in an order list -->
     <ol class="data" id="userList">
     </ol>
 
     <hr />
-    <!-- Divider -->
 
     <!-- Note: Start our script -->
     <script src="main.js"></script>

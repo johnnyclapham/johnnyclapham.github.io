@@ -49,10 +49,15 @@ function pull_data() {
                 // Note: Set statistics values
                 document.getElementById("statisticsText").innerHTML = String("# objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
 
+                // Note: Make RSSI positive for easy processing
+                childRSSI *= -1;
                 // Note: Normalize our RSSI to be on scale {0-1}
-                var normalized_childRSSI = (childRSSI - 29) / (120 - 29);
+                var normalized_childRSSI = (childRSSI - 30) / (130 - 30);
                 // Note: Add data to our heatMapData var
-                heatMapData.push({ location: new google.maps.LatLng(childLAT, childLONG), weight: normalized_childRSSI });
+                var invertedRssiNormalized = 1 - normalized_childRSSI;
+
+                heatMapData.push({ location: new google.maps.LatLng(childLAT, childLONG), weight: invertedRssiNormalized });
+                console.log("RSSI: " + childRSSI + " || normalized: " + normalized_childRSSI + " || inverted: " + invertedRssiNormalized);
             });
         } else {
             // Note: In case of empty database
@@ -61,8 +66,63 @@ function pull_data() {
         //Note: After all objects have been iterated through
         // Do something
         console.log("The yam has landed, hoorah!");
+        console.log(heatMapData);
         setHeat(heatMapData);
-        // setHeat();
+    }).catch((error) => {
+        console.error(error);
+    });
+}
+
+
+
+
+function log_data() {
+    //Note: First we flush data in case we are reloading
+    flush_data();
+
+    var currTime, retTime, numObjects = 0;
+    var start = Date.now();
+
+    const firebaseConfig = fire_config;
+    const app = initializeApp(firebaseConfig);
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, 'User/')).then((snapshot) => {
+        if (snapshot.exists()) {
+            snapshot.forEach(function(childSnapshot) {
+                var key = childSnapshot.key;
+                var childRSSI = childSnapshot.child("rssi").val();
+                var childLAT = childSnapshot.child("latitude").val();
+                var childLONG = childSnapshot.child("longitude").val();
+                console.log("key: " + key + " RSSI: " + childRSSI);
+
+                //Note: We add all data to our html list
+                var node = document.createElement("LI");
+                var textnode = document.createTextNode("rssi:   {" + childRSSI + "}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}");
+                node.appendChild(textnode);
+                document.getElementById("userList").appendChild(node);
+
+                // Note: Update Statitistics
+                numObjects++;
+                currTime = new Date().toLocaleString();
+                retTime = Date.now() - start;
+                // Note: Set statistics values
+                document.getElementById("statisticsText").innerHTML = String("# objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
+
+                // Note: Make RSSI positive for easy processing
+                childRSSI *= -1;
+                // Note: Normalize our RSSI to be on scale {0-1}
+                var normalized_childRSSI = (childRSSI - 30) / (130 - 30);
+                // Note: Add data to our heatMapData var
+                var invertedRssiNormalized = 1 - normalized_childRSSI;
+                console.log("RSSI: " + childRSSI + " || normalized: " + normalized_childRSSI + " || inverted: " + invertedRssiNormalized);
+            });
+        } else {
+            // Note: In case of empty database
+            console.log("No data available");
+        }
+        //Note: After all objects have been iterated through
+        // Do something
+        console.log("Data log complete.");
     }).catch((error) => {
         console.error(error);
     });
@@ -82,5 +142,6 @@ function flush_data() {
 export {
     // Note: Add our functions to this export!
     pull_data,
-    flush_data
+    flush_data,
+    log_data
 }

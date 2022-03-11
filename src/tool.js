@@ -24,12 +24,6 @@ flush_button.onclick = function() {
     flush_data()
 }
 
-// var test_button = document.getElementById('init_map_button');
-// test_button.onclick = function() {
-//     // indexFunction()
-//     initMap();
-// }
-
 var log_data_button = document.getElementById('log_data_button');
 log_data_button.onclick = function() {
     log_data();

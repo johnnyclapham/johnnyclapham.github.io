@@ -24,6 +24,10 @@
     border: 2px solid powderblue;
 }
 
+.space {
+    padding: 10px;
+}
+
 .data {
     font-family: Courier, Arial, Helvetica;
 }
@@ -56,18 +60,25 @@ h3 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.p {
-    /* font-family: 'Courier New', Courier, monospace; */
-    font-family: Arial, Helvetica, sans-serif;
-    border: 2px solid yellow;
-}
-
 p {
     /* padding:0px; 
    margin:0px;  */
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
     /* border: 2px solid red; */
+}
+
+ol {
+    overflow: scroll;
+    width: 95%;
+    height: 100%;
+    text-align: left;
+    background-color: #11574041;
+    border-radius: 8px;
+}
+
+.ldiv {
+    height: 300px;
 }
 
 
@@ -92,8 +103,17 @@ p {
     /* The height is 400 pixels */
     width: 100%;
     /* The width is the width of the web page */
-    overflow: hidden;
+    /* overflow: hidden;
     position: relative;
+    padding: 10px;
+    border: 2px solid blue; */
+    /* new */
+    width: 100%;
+    background-color: #11574085;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    /* padding-bottom: 5px; */
 }
 
 
@@ -190,11 +210,14 @@ p {
 }
 
 .column_right {
+    text-align: left;
     float: left;
     width: 33%;
     padding-bottom: 5px;
+    /* padding-top: 15px; */
     /* padding-bottom: 150px; */
     padding-left: 1%;
+    border-radius: 15px;
 }
 
 .page_block {

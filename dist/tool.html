@@ -29,14 +29,16 @@
         <p id="home_link"><a href="../index.html">Return to Homepage</a></p>
         <p>This page hosts the Anaximander data visualization tool. This tool is currently being developed for CSCI 780: Data Visualization.</p> -->
             </div>
-
-            <div id="map" class="google-map">
-                <!-- Google's JS maps example: -->
-                <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly" async></script> -->
-                <!-- Our JS map call (note the key is restricted and API calls
+            <div class="map_height_lim">
+                <div id="map" class="google-map">
+                    <!-- Google's JS maps example: -->
+                    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly" async></script> -->
+                    <!-- Our JS map call (note the key is restricted and API calls
             are manually limited by self-imposed quotas) -->
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrDAcPqqdS5Ph5cDmyDbwa0pd6bb9syg&libraries=visualization" async></script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrDAcPqqdS5Ph5cDmyDbwa0pd6bb9syg&libraries=visualization" async></script>
+                </div>
             </div>
+
             <div class="space"></div>
             <div>
                 <button id="get_button" type="button">Initialize Heatmap</button>

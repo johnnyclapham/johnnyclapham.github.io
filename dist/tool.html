@@ -14,78 +14,85 @@
 </style>
 
 <body>
+
     <div class="center">
-        <div class="topnav">
-            <a href="https://johnnyclapham.github.io">Home</a>
-            <a href="https://github.com/johnnyclapham">Git Home</a>
-        </div>
-        <!-- <p></p> -->
-        <div class="space"></div>
-        <div>
-            <!-- <h1 id="title1">Tool Development </h1>
+        <div class="width_lim">
+            <div class="topnav">
+                <a href="https://johnnyclapham.github.io">Home</a>
+                <a href="https://github.com/johnnyclapham">Git Home</a>
+            </div>
+            <div class="space"></div>
+            <div>
+                <!-- <h1 id="title1">Tool Development </h1>
         <p id="home_link"><a href="../index.html">Return to Homepage</a></p>
         <p>This page hosts the Anaximander data visualization tool. This tool is currently being developed for CSCI 780: Data Visualization.</p> -->
-        </div>
-
-        <div id="map" class="google-map">
-            <!-- Google's JS maps example: -->
-            <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly" async></script> -->
-            <!-- Our JS map call (note the key is restricted and API calls
+            </div>
+            <div class="map_height_lim">
+                <div id="map" class="google-map">
+                    <!-- Google's JS maps example: -->
+                    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly" async></script> -->
+                    <!-- Our JS map call (note the key is restricted and API calls
             are manually limited by self-imposed quotas) -->
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrDAcPqqdS5Ph5cDmyDbwa0pd6bb9syg&libraries=visualization" async></script>
-        </div>
-        <div class="space"></div>
-        <!-- <div> -->
-        <!-- <p class="data" id="statisticsText"># objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p> -->
-        <!-- <button id="get_button" type="button">Initialize Heatmap</button>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrDAcPqqdS5Ph5cDmyDbwa0pd6bb9syg&libraries=visualization" async></script>
+                </div>
+                <div class="space"></div>
+                <!-- <div> -->
+                <!-- <p class="data" id="statisticsText"># objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p> -->
+                <!-- <button id="get_button" type="button">Initialize Heatmap</button>
             <button id="log_data_button" type="button">Log Data</button>
             <button id="flush_button" type="button">Clear Data</button> -->
-        <!-- <button id="init_map_button" type="button">Initialize Empty GoogleMap</button> -->
-        <!-- <button id="log_data_button" type="button">Log Data</button> -->
-        <!-- <div class="column_set"> -->
-        <!-- <div class="column_right">
+                <!-- <button id="init_map_button" type="button">Initialize Empty GoogleMap</button> -->
+                <!-- <button id="log_data_button" type="button">Log Data</button> -->
+                <!-- <div class="column_set"> -->
+                <!-- <div class="column_right">
                     <button id="get_button" type="button">Initialize Heatmap</button>
                     <button id="log_data_button" type="button">Log Data</button>
                     <button id="flush_button" type="button">Clear Data</button>
                     <p class="data" id="statisticsText"># objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
                 </div> -->
-        <!-- <div></div> -->
-        <!-- Note: We display our data in an order list -->
-        <!-- <div class="column_left"> -->
+                <!-- <div></div> -->
+                <!-- Note: We display our data in an order list -->
+                <!-- <div class="column_left"> -->
 
-        <!-- <div class="ldiv">
+                <!-- <div class="ldiv">
                 <ol class="data" id="userList"></ol>
             </div> -->
-        <!-- </div> -->
+                <!-- </div> -->
 
-        <!-- <div class="column_right"> -->
-        <div>
-            <!-- <button id="get_button" type="button">Initialize Heatmap</button> -->
-            <button id="log_data_button" type="button">Log Data</button>
-            <button id="flush_button" type="button">Clear Data</button>
+                <!-- <div class="column_right"> -->
+                <div>
+                    <!-- <button id="get_button" type="button">Initialize Heatmap</button> -->
+                    <button id="log_data_button" type="button">Log Data</button>
+                    <button id="flush_button" type="button">Clear Data</button>
 
-            <p class="data" id="statisticsText"># objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
-        </div>
+                    <p class="data" id="statisticsText"># objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
+                </div>
 
-        <h3>Data Log:</h3>
+                <h3>Data Log:</h3>
 
-        <div class="ldiv">
-            <ol class="data" id="userList"></ol>
-        </div>
-        <!-- </div>
+                <div class="ldiv">
+                    <ol class="data" id="userList"></ol>
+                </div>
+                <!-- </div>
             </div>
-        </div> -->
 
-        <!-- <hr /> -->
+            <div class="space"></div>
+            <div>
+                <button id="get_button" type="button">Initialize Heatmap</button>
+                <button id="log_data_button" type="button">Log Data</button>
+                <button id="flush_button" type="button">Clear Data</button>
+                <p class="data" id="statisticsText"># objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
+            </div>
 
-        <!-- Note: We display our data in an order list
-        <ol class="data" id="userList"></ol> -->
+            <h3>Data Log:</h3>
 
-        <!-- <hr /> -->
-    </div>
-
-    <!-- Note: Start our script -->
-    <script src="main.js"></script>
+            <div class="ldiv">
+                <ol class="data" id="userList"></ol>
+            </div>
+        </div>
+        <!-- Note: Start our script -->
+                <script src="main.js"></script>
+            </div>
 </body>
 
 </html>

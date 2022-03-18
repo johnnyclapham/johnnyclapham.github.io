@@ -81,6 +81,15 @@ ol {
     height: 300px;
 }
 
+.width_lim {
+    max-width: 880px;
+}
+
+.map_height_lim {
+    max-height: 880px;
+    overflow: hidden;
+}
+
 
 /* #self_picture {
     padding-bottom: 100px;

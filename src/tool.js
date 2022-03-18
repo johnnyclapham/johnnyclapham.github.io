@@ -15,13 +15,15 @@ import {
     initMap
 } from './map.js'
 
-var get_button = document.getElementById('get_button');
-get_button.onclick = function() {
-    pull_data()
-}
+pull_data();
+
+// var get_button = document.getElementById('get_button');
+// get_button.onclick = function() {
+//     pull_data()
+// }
 var flush_button = document.getElementById('flush_button');
 flush_button.onclick = function() {
-    flush_data()
+    flush_data();
 }
 
 var log_data_button = document.getElementById('log_data_button');

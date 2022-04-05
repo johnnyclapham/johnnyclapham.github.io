@@ -25,7 +25,8 @@
 }
 
 .space {
-    padding: 10px;
+    /* padding: 10px; */
+    padding-top: 1%;
 }
 
 .data {
@@ -38,14 +39,16 @@
 
 .body {
     font-family: 'Courier New', Courier, monospace;
-    border: 2px solid red;
-    margin: auto;
+    border: 0px solid red;
+    margin: 0px;
 }
 
 body {
     text-align: justify;
     /* background: black; */
     /* max-width: 1400px; */
+    padding: 0%;
+    margin: 0px;
 }
 
 h1 {
@@ -68,29 +71,76 @@ p {
     /* border: 2px solid red; */
 }
 
-ol {
+
+/* ol {
     overflow: scroll;
     width: 95%;
     height: 100%;
     text-align: left;
     background-color: #11574041;
     border-radius: 8px;
+} */
+
+ol {
+    /* overflow: scroll; */
+    /* width: 100%; */
+    /* height: 100%; */
+    text-align: center;
+    /* background-color: #11574041; */
+    /* border-radius: 8px; */
+    font-size: 10;
+    /* height: 80%; */
+    margin: 1%;
 }
 
 .ldiv {
     height: 300px;
+    /* overflow: hidden; */
+    background-color: red;
+    width: 50%;
 }
 
 .width_lim {
     text-align: center;
     /* max-width: 880px; */
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
-.map_height_lim {
-    max-height: 880px;
+.height_lim {
+    /* max-height: 880px; */
+    /* height: 95%; */
+    max-height: 100%;
     overflow: hidden;
+    /* padding-top: 5%; */
+    /* padding-bottom: 5%; */
+}
+
+.centerTool {
+    margin: auto;
+    /* width: 9%; */
+    /* border: 5px solid #FFFF00; */
+    /* padding: 15px; */
+    /* max-width: 1400px; */
+}
+
+
+/* Set the size of the div element that contains the map */
+
+.google-map {
+    /* height: 50%; */
+    height: 80%;
+    /* overflow: hidden;
+    position: relative;
+    padding: 10px;
+    border: 2px solid blue; */
+    /* new */
+    width: 100%;
+    background-color: #11574085;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    /* padding-bottom: 5px; */
 }
 
 
@@ -108,27 +158,6 @@ ol {
 }
 
 
-/* Set the size of the div element that contains the map */
-
-.google-map {
-    height: 50%;
-    /* The height is 400 pixels */
-    width: 100%;
-    /* The width is the width of the web page */
-    /* overflow: hidden;
-    position: relative;
-    padding: 10px;
-    border: 2px solid blue; */
-    /* new */
-    width: 100%;
-    background-color: #11574085;
-    border-radius: 8px;
-    overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-    /* padding-bottom: 5px; */
-}
-
-
 /* navigation below (fron w3schools) */
 
 #wm_link_img {
@@ -142,6 +171,7 @@ ol {
 .topnav {
     width: 100%;
     background-color: #115740;
+    /* border-radius: 8px; */
     border-radius: 8px;
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
@@ -189,12 +219,14 @@ ol {
 
 .topnav a.active {
     /* background-color: #04AA6D; */
-    color: white;
+    /* color: red; */
     display: block;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
     border-radius: 8px;
+    color: #F0B323;
+    font-size: 19px;
 }
 
 .center {
@@ -232,6 +264,54 @@ ol {
     border-radius: 15px;
 }
 
+.column_set_tool {
+    width: 100%;
+    padding-bottom: 200px;
+}
+
+.column_left_tool {
+    /* height: 80%; */
+    text-align: justify;
+    float: left;
+    width: 63%;
+    padding-right: 1%;
+    /* padding-left: 14px; */
+    /* background-color: #f3f3f3; */
+    /* background-color: #1157401b; */
+    /* border-radius: 15px; */
+    border-radius: 8px;
+}
+
+.column_right_tool {
+    height: 80%;
+    text-align: left;
+    float: left;
+    width: 36%;
+    /* height: 100%; */
+    /* padding-bottom: 5px; */
+    /* padding-top: 15px; */
+    /* padding-bottom: 150px; */
+    /* padding-left: 1%;
+    padding-right: 1%; */
+    border-radius: 15px;
+    background-color: #1157401b;
+    /* background-color: red; */
+    border-radius: 8px;
+    max-height: 100%;
+    overflow: scroll;
+}
+
+.tool_view {
+    /* height: 100%; */
+}
+
 .page_block {
     background-color: #505050;
+}
+
+.log_label {
+    margin: 1%;
+    text-align: center;
+    font-size: 12;
+    padding: 0%;
 }

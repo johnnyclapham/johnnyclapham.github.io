@@ -16,6 +16,7 @@ import {
 } from './map.js'
 
 pull_data();
+log_data();
 
 // var get_button = document.getElementById('get_button');
 // get_button.onclick = function() {

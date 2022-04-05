@@ -18,32 +18,35 @@
 <body>
 
     <div class="centerTool">
-        <div class="width_lim">
-            <div class="height_lim">
-                <div class="space"></div>
-                <div class="topnav">
-                    <a href="https://johnnyclapham.github.io">Home</a>
-                    <a href="https://github.com/johnnyclapham">Git Home</a>
-                    <a class="active" href="dist/tool.html">Signal Strength (RSS) Data Visualization Tool</a>
-                </div>
-                <div class="space"></div>
+        <div class="x_y_lim">
+            <!-- <div class="width_lim_">
+                <div class="height_lim"> -->
 
-                <div id="tool_view">
-                    <div class="column_set_tool">
-                        <div class="column_left_tool">
-                            <div id="map" class="google-map">
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrDAcPqqdS5Ph5cDmyDbwa0pd6bb9syg&libraries=visualization" async></script>
-                            </div>
+            <div class="space"></div>
+            <div class="topnav">
+                <!-- <a href="https://johnnyclapham.github.io">Home</a> -->
+                <a href="../index.html">Home</a>
+                <a href="https://github.com/johnnyclapham">Git Home</a>
+                <a class="active" href="dist/tool.html">RSS Visualization Tool</a>
+            </div>
+            <div class="space"></div>
+
+            <div class="tool_view">
+                <div class="column_set_tool">
+                    <div class="column_left_tool">
+                        <div id="map" class="google-map">
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrDAcPqqdS5Ph5cDmyDbwa0pd6bb9syg&libraries=visualization" async></script>
                         </div>
-                        <div class="column_right_tool">
-                            <!-- <h3>Data Log:</h3> -->
-                            <!-- <div class="ldiv"> -->
-                            <p class="log_label">Data Log</p>
-                            <ol class="data" id="userList"></ol>
-                            <!-- </div> -->
-                        </div>
+                    </div>
+                    <div class="column_right_tool">
+
+                        <p class="log_label">Data Log</p>
+                        <ol class="data" id="userList"></ol>
 
                     </div>
+
+                    <!-- </div>
+            </div> -->
                 </div>
             </div>
             <div class="space"></div>

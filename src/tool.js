@@ -15,7 +15,7 @@ import {
     initMap
 } from './map.js'
 
-pull_data();
+// pull_data();
 log_data();
 
 // var get_button = document.getElementById('get_button');

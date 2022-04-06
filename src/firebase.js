@@ -2,13 +2,14 @@ import * as d3 from 'd3';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, child, get, Database } from "firebase/database";
 import { fire_config } from './fire_config.js'
-import { setHeat } from './map.js'
+import { setHeat, setCircle } from './map.js'
 // Note: We are using firebase database; not firebase firestore!
 
 
 
 function pull_data(mode) {
     var heatMapData = [];
+    var circleMapData = []
 
     //Note: First we flush data in case we are reloading
     flush_data();
@@ -43,8 +44,20 @@ function pull_data(mode) {
                 var normalized_childRSSI = (childRSSI - 30) / (130 - 30);
                 // Note: Add data to our heatMapData var
                 var invertedRssiNormalized = 1 - normalized_childRSSI;
-                heatMapData.push({ location: new google.maps.LatLng(childLAT, childLONG), weight: invertedRssiNormalized });
-                console.log("RSSI: " + childRSSI + " || normalized: " + normalized_childRSSI + " || inverted: " + invertedRssiNormalized);
+                if (mode == "heat") {
+                    heatMapData.push({
+                        location: new google.maps.LatLng(childLAT, childLONG),
+                        weight: invertedRssiNormalized
+                    });
+                } else if (mode == "circle") {
+                    // Create circle dataset
+                    circleMapData.push({
+                        location: new google.maps.LatLng(childLAT, childLONG),
+                        weight: invertedRssiNormalized
+                    })
+                }
+                // heatMapData.push({ location: new google.maps.LatLng(childLAT, childLONG), weight: invertedRssiNormalized });
+                // console.log("RSSI: " + childRSSI + " || normalized: " + normalized_childRSSI + " || inverted: " + invertedRssiNormalized);
             });
         } else {
             // Note: In case of empty database
@@ -52,9 +65,12 @@ function pull_data(mode) {
         }
         //Note: After all objects have been iterated through
         if (mode == "heat") {
+            // Note: If we are in heat mode, plot heatmap
             setHeat(heatMapData);
         } else if (mode == "circle") {
+            // Note: If we are in circle mode, plot circle plot
             console.log("circle");
+            setCircle(circleMapData);
         }
         // setHeat(heatMapData);
     }).catch((error) => {

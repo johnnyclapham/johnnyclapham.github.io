@@ -7,7 +7,7 @@ import { setHeat } from './map.js'
 
 
 
-function pull_data() {
+function pull_data(mode) {
     var heatMapData = [];
 
     //Note: First we flush data in case we are reloading
@@ -25,39 +25,24 @@ function pull_data() {
         if (snapshot.exists()) {
             // Note: For each item in our Database 
             snapshot.forEach(function(childSnapshot) {
-                //Note: Do some actions
-
                 //Note: childSnapshot is our user object
                 var key = childSnapshot.key;
                 //Note: Extract values
                 var childRSSI = childSnapshot.child("rssi").val();
                 var childLAT = childSnapshot.child("latitude").val();
                 var childLONG = childSnapshot.child("longitude").val();
-                //Note: Log all our values (debugging)
-                console.log("key: " + key + " RSSI: " + childRSSI);
-
-                // //Note: Currently, we add all data to our html list
-                // var node = document.createElement("LI");
-                // var textnode = document.createTextNode(index_number + ": rssi:   {" + childRSSI + "}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}");
-                // node.appendChild(textnode);
-                // document.getElementById("userList").appendChild(node);
-
                 // Note: Update Statitistics
                 numObjects++;
                 currTime = new Date().toLocaleString();
                 retTime = Date.now() - start;
                 // Note: Set statistics values
                 update_retrieve_stats(document, numObjects, retTime, currTime);
-
-                // document.getElementById("statisticsText").innerHTML = String("Number of objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
-
                 // Note: Make RSSI positive for easy processing
                 childRSSI *= -1;
                 // Note: Normalize our RSSI to be on scale {0-1}
                 var normalized_childRSSI = (childRSSI - 30) / (130 - 30);
                 // Note: Add data to our heatMapData var
                 var invertedRssiNormalized = 1 - normalized_childRSSI;
-
                 heatMapData.push({ location: new google.maps.LatLng(childLAT, childLONG), weight: invertedRssiNormalized });
                 console.log("RSSI: " + childRSSI + " || normalized: " + normalized_childRSSI + " || inverted: " + invertedRssiNormalized);
             });
@@ -66,10 +51,12 @@ function pull_data() {
             console.log("No data available");
         }
         //Note: After all objects have been iterated through
-        // Do something
-        console.log("The yam has landed, hoorah!");
-        console.log(heatMapData);
-        setHeat(heatMapData);
+        if (mode == "heat") {
+            setHeat(heatMapData);
+        } else if (mode == "circle") {
+            console.log("circle");
+        }
+        // setHeat(heatMapData);
     }).catch((error) => {
         console.error(error);
     });

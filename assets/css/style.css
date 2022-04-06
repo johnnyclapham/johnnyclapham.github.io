@@ -457,7 +457,14 @@ ol li {
 }
 
 .row_three {
-    height: 78%;
+    height: 10%;
+    border-radius: 8px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.row_four {
+    height: 67%;
     background-color: #11574085;
     border-radius: 8px;
     overflow-y: scroll;
@@ -498,7 +505,7 @@ ol li {
     overflow: hidden;
 }
 
-.button_1 {
+.button_1a {
     height: 100%;
     width: 49%;
     padding-right: 2%;
@@ -513,7 +520,7 @@ ol li {
     color: white;
 }
 
-.button_2 {
+.button_2a {
     height: 100%;
     width: 49%;
     float: right;
@@ -527,17 +534,64 @@ ol li {
     color: white;
 }
 
+.button_1b {
+    height: 100%;
+    width: 49%;
+    padding-right: 2%;
+    float: left;
+    font-size: 0.85vw;
+    overflow: hidden;
+    background-color: #115740;
+    border-radius: 8px;
+    border: 2px #115740;
+    transition: font-size 200ms;
+    font-size: 2.1vw;
+    color: white;
+    /* border: thick solid #F0B323; */
+}
+
+.button_2b {
+    height: 100%;
+    width: 49%;
+    float: right;
+    font-size: 0.85vw;
+    overflow: visible;
+    background-color: #115740;
+    border-radius: 8px;
+    border: 2px #115740;
+    transition: font-size 200ms;
+    font-size: 2.1vw;
+    color: white;
+    /* border: thick solid #f0b22300; */
+}
+
 
 /* Change the color of column on hover */
 
-.button_1:hover {
+.button_1a:hover {
     transition-delay: 100ms;
     font-size: 2.3vw;
     color: #F0B323;
 }
 
-.button_2:hover {
+.button_2a:hover {
     transition-delay: 100ms;
     font-size: 2.3vw;
     color: #F0B323;
+}
+
+.button_1b:hover {
+    transition-delay: 100ms;
+    font-size: 2.3vw;
+    color: #F0B323;
+    border-block-start-width: thick;
+    border: thick solid #F0B323;
+}
+
+.button_2b:hover {
+    transition-delay: 100ms;
+    font-size: 2.3vw;
+    color: #F0B323;
+    border-block-start-width: thick;
+    border: thick solid #F0B323;
 }

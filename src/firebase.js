@@ -47,7 +47,9 @@ function pull_data() {
                 currTime = new Date().toLocaleString();
                 retTime = Date.now() - start;
                 // Note: Set statistics values
-                document.getElementById("statisticsText").innerHTML = String("# objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
+                update_retrieve_stats(document, numObjects, retTime, currTime);
+
+                // document.getElementById("statisticsText").innerHTML = String("Number of objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
 
                 // Note: Make RSSI positive for easy processing
                 childRSSI *= -1;
@@ -71,6 +73,10 @@ function pull_data() {
     }).catch((error) => {
         console.error(error);
     });
+}
+
+function update_retrieve_stats(document, numObjects, retTime, currTime) {
+    document.getElementById("statisticsText").innerHTML = String("Number of objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
 }
 
 
@@ -112,7 +118,8 @@ function log_data() {
                 currTime = new Date().toLocaleString();
                 retTime = Date.now() - start;
                 // Note: Set statistics values
-                document.getElementById("statisticsText").innerHTML = String("# objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
+                update_retrieve_stats(document, numObjects, retTime, currTime);
+                // document.getElementById("statisticsText").innerHTML = String("Number of objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
 
                 // Note: Make RSSI positive for easy processing
                 childRSSI *= -1;

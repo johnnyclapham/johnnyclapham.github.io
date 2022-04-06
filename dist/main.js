@@ -80,13 +80,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/style.js":
+/*!**********************!*\
+  !*** ./src/style.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"resizeView\": () => (/* binding */ resizeView)\n/* harmony export */ });\nfunction resizeView() {\r\n    // Note: Dynamically resize the view\r\n    var pageWidth = window.innerWidth;\r\n    document.getElementById(\"tool_view\").style.height = (0.6 * pageWidth);\r\n}\r\n\r\n\n\n//# sourceURL=webpack://johnnyclapham.github.io/./src/style.js?");
+
+/***/ }),
+
 /***/ "./src/tool.js":
 /*!*********************!*\
   !*** ./src/tool.js ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _firebase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./firebase.js */ \"./src/firebase.js\");\n/* harmony import */ var _map_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map.js */ \"./src/map.js\");\n// Note: Tutorial with documentation https://www.tutorialsteacher.com/d3js/select-dom-element-using-d3js\r\n\r\n// import { map } from 'd3';\r\n\r\n\r\n// import {\r\n//     indexFunction\r\n// } from './index.js'\r\n\r\n\r\n\r\n\r\n(0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.pull_data)();\r\n// log_data();\r\n\r\n// var get_button = document.getElementById('get_button');\r\n// get_button.onclick = function() {\r\n//     pull_data()\r\n// }\r\nvar flush_button = document.getElementById('flush_button');\r\nflush_button.onclick = function() {\r\n    (0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.flush_data)();\r\n}\r\n\r\nvar log_data_button = document.getElementById('log_data_button');\r\nlog_data_button.onclick = function() {\r\n    (0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.log_data)();\r\n    (0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.pull_data)();\r\n}\r\n\r\n// var left_button = document.getElementById('left_control');\r\n// left_button.onclick = function() {\r\n//     log_data();\r\n// }\r\n\r\n// var right_button = document.getElementById('right_control');\r\n// right_button.onclick = function() {\r\n//     flush_data();\r\n// }\n\n//# sourceURL=webpack://johnnyclapham.github.io/./src/tool.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _firebase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./firebase.js */ \"./src/firebase.js\");\n/* harmony import */ var _map_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map.js */ \"./src/map.js\");\n/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.js */ \"./src/style.js\");\n// Note: Tutorial with documentation https://www.tutorialsteacher.com/d3js/select-dom-element-using-d3js\r\n\r\n// import { map } from 'd3';\r\n\r\n\r\n// import {\r\n//     indexFunction\r\n// } from './index.js'\r\n\r\n\r\n\r\n\r\n\r\n(0,_style_js__WEBPACK_IMPORTED_MODULE_2__.resizeView)();\r\nwindow.addEventListener('resize', function(event) {\r\n    (0,_style_js__WEBPACK_IMPORTED_MODULE_2__.resizeView)();\r\n}, true);\r\n\r\n(0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.pull_data)();\r\n(0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.log_data)();\r\n\r\nvar flush_button = document.getElementById('flush_button');\r\nflush_button.onclick = function() {\r\n    (0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.flush_data)();\r\n}\r\n\r\nvar log_data_button = document.getElementById('log_data_button');\r\nlog_data_button.onclick = function() {\r\n    (0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.log_data)();\r\n    (0,_firebase_js__WEBPACK_IMPORTED_MODULE_0__.pull_data)();\r\n}\n\n//# sourceURL=webpack://johnnyclapham.github.io/./src/tool.js?");
 
 /***/ }),
 

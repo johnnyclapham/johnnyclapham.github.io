@@ -15,14 +15,18 @@ import {
     initMap
 } from './map.js'
 
+import {
+    resizeView
+} from './style.js'
+
+resizeView();
+window.addEventListener('resize', function(event) {
+    resizeView();
+}, true);
 
 pull_data();
-// log_data();
+log_data();
 
-// var get_button = document.getElementById('get_button');
-// get_button.onclick = function() {
-//     pull_data()
-// }
 var flush_button = document.getElementById('flush_button');
 flush_button.onclick = function() {
     flush_data();
@@ -33,13 +37,3 @@ log_data_button.onclick = function() {
     log_data();
     pull_data();
 }
-
-// var left_button = document.getElementById('left_control');
-// left_button.onclick = function() {
-//     log_data();
-// }
-
-// var right_button = document.getElementById('right_control');
-// right_button.onclick = function() {
-//     flush_data();
-// }

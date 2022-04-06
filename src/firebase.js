@@ -36,11 +36,11 @@ function pull_data() {
                 //Note: Log all our values (debugging)
                 console.log("key: " + key + " RSSI: " + childRSSI);
 
-                //Note: Currently, we add all data to our html list
-                var node = document.createElement("LI");
-                var textnode = document.createTextNode("rssi:   {" + childRSSI + "}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}");
-                node.appendChild(textnode);
-                document.getElementById("userList").appendChild(node);
+                // //Note: Currently, we add all data to our html list
+                // var node = document.createElement("LI");
+                // var textnode = document.createTextNode(index_number + ": rssi:   {" + childRSSI + "}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}");
+                // node.appendChild(textnode);
+                // document.getElementById("userList").appendChild(node);
 
                 // Note: Update Statitistics
                 numObjects++;
@@ -79,7 +79,7 @@ function pull_data() {
 function log_data() {
     //Note: First we flush data in case we are reloading
     flush_data();
-
+    var index_number = 1;
     var currTime, retTime, numObjects = 0;
     var start = Date.now();
 
@@ -97,7 +97,13 @@ function log_data() {
 
                 //Note: We add all data to our html list
                 var node = document.createElement("LI");
-                var textnode = document.createTextNode("rssi:   {" + childRSSI + "}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}");
+                // var node = document.createElement("P");
+
+                const textToPrint = index_number + "-> rssi:   {" + childRSSI + " dBm}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}";
+
+                var textnode = document.createTextNode(textToPrint);
+
+                textnode.className = "raw_data_item";
                 node.appendChild(textnode);
                 document.getElementById("userList").appendChild(node);
 
@@ -115,6 +121,8 @@ function log_data() {
                 // Note: Add data to our heatMapData var
                 var invertedRssiNormalized = 1 - normalized_childRSSI;
                 console.log("RSSI: " + childRSSI + " || normalized: " + normalized_childRSSI + " || inverted: " + invertedRssiNormalized);
+                // Note: Increase the index for printing the data
+                index_number++;
             });
         } else {
             // Note: In case of empty database

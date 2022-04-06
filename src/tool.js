@@ -31,3 +31,13 @@ var log_data_button = document.getElementById('log_data_button');
 log_data_button.onclick = function() {
     log_data();
 }
+
+// var left_button = document.getElementById('left_control');
+// left_button.onclick = function() {
+//     log_data();
+// }
+
+// var right_button = document.getElementById('right_control');
+// right_button.onclick = function() {
+//     flush_data();
+// }

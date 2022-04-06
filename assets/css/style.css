@@ -485,25 +485,17 @@ ol li {
     font-family: Courier, Arial, Helvetica;
     font-size: 1vw;
     text-align: left;
-    /* overflow: hidden; */
     float: center;
-    /* margin-top: 2.5%; */
-    /* width: 100%; */
-    /* box-sizing: border-box; */
-    /* position: relative; */
     position: absolute;
     margin: 0;
-    /* margin-bottom: 5%; */
     padding: 1%;
     border: 2px #115740;
     float: center;
-    /* text-align: center; */
     padding-top: 1.5%;
     padding-left: 2%;
     text-decoration: none;
     font-size: 1.2vmin;
     overflow: hidden;
-    /* height: 100%; */
 }
 
 .button_1 {

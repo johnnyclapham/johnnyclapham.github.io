@@ -106,6 +106,7 @@ function centerOnLocation(map) {
 function setHeat(heatMapData) {
 
     const map = initMap();
+    centerOnLocation(map);
     var heatmap = new google.maps.visualization.HeatmapLayer({
         data: heatMapData
     });

@@ -105,11 +105,12 @@ function log_data() {
                 var node = document.createElement("LI");
                 // var node = document.createElement("P");
 
-                const textToPrint = index_number + "-> rssi:   {" + childRSSI + " dBm}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}";
+                const textToPrint = " rssi:   {" + childRSSI + " dBm}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}";
 
                 var textnode = document.createTextNode(textToPrint);
 
                 textnode.className = "raw_data_item";
+                // textnode.className = "data_raw_list"
                 node.appendChild(textnode);
                 document.getElementById("userList").appendChild(node);
 

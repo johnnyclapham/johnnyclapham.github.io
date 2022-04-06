@@ -1,5 +1,7 @@
 <html>
 
+<!-- Branch: Experimental -->
+
 <head>
     <title>Anaximander</title>
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -15,69 +17,71 @@
 
 <body>
 
-    <div class="center">
-        <div class="width_lim">
+    <div class="centerTool">
+        <div class="x_y_lim" id="x_y_lim">
+            <!-- <div class="width_lim_">
+                <div class="height_lim"> -->
+
+            <div class="space"></div>
             <div class="topnav">
-                <a href="https://johnnyclapham.github.io">Home</a>
+                <!-- <a href="https://johnnyclapham.github.io">Home</a> -->
+                <a href="../index.html">Home</a>
                 <a href="https://github.com/johnnyclapham">Git Home</a>
+                <a class="active" href="dist/tool.html">RSS Visualization Tool</a>
             </div>
             <div class="space"></div>
 
-            <!-- <h1 id="title1">Tool Development </h1>
-        <p id="home_link"><a href="../index.html">Return to Homepage</a></p>
-        <p>This page hosts the Anaximander data visualization tool. This tool is currently being developed for CSCI 780: Data Visualization.</p> -->
-
-            <!-- <div>
-                <h3>Anaximander Data Visualization Tool (Work in Progress)</h3>
-            </div> -->
-            <div class="map_height_lim">
-                <div id="map" class="google-map">
-                    <!-- Google's JS maps example: -->
-                    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly" async></script> -->
-                    <!-- Our JS map call (note the key is restricted and API calls
-            are manually limited by self-imposed quotas) -->
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrDAcPqqdS5Ph5cDmyDbwa0pd6bb9syg&libraries=visualization" async></script>
-                </div>
-
-                <div class="space"></div>
-                <div>
-                    <div>
-                        <h3>Anaximander Data Visualization Tool (Work in Progress)</h3>
+            <div class="tool_view" id="tool_view">
+                <div class="column_set_tool">
+                    <div class="column_left_tool" id="column_left_tool">
+                        <div id="map" class="google-map">
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrDAcPqqdS5Ph5cDmyDbwa0pd6bb9syg&libraries=visualization" async></script>
+                        </div>
                     </div>
-                    <!-- <button id="get_button" type="button">Initialize Heatmap</button> -->
-                    <button id="log_data_button" type="button">Log Data</button>
-                    <button id="flush_button" type="button">Clear Data</button>
+                    <div class="column_right_tool" id="column_right_tool">
+                        <div class="rows">
+                            <div class="row_one">
+                                <div class="control_center">
+                                    <!-- <div class="space"></div> -->
+                                    <p class="data_control" id="statisticsText">Number of objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
 
-                    <p class="data" id="statisticsText"># objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
+                                </div>
+                            </div>
+                            <div class="space"></div>
+                            <div class="row_two">
+                                <button class="button_1" id="log_data_button" type="button">Refresh Data</button>
+                                <button class="button_2" id="flush_button" type="button">Clear Data</button>
+
+                            </div>
+                            <div class="space"></div>
+                            <div class="row_three">
+                                <!-- <div class="log_div"> -->
+                                <p class="log_label">Data Log</p>
+                                <!-- <p class="data_control" id="statisticsText"># objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p> -->
+                                <!-- <ol class="data_raw" id="userList"></ol> -->
+                                <ol class="data_raw_list" id="userList"></ol>
+                                <div class="raw_data_item" id="userList">
+                                    <!-- <ol class="data_raw_list" id="userList"> -->
+
+                                    <!-- </ol> -->
+                                </div>
+                                </ol>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- </div>
+            </div> -->
                 </div>
-
-                <h3>Data Log:</h3>
-
-
-
-                <div class="ldiv">
-                    <ol class="data" id="userList"></ol>
-                </div>
-                <!-- </div>
             </div>
-
-            <div class="space"></div>
+            <!-- <div class="space"></div> -->
             <div>
-                <button id="get_button" type="button">Initialize Heatmap</button>
-                <button id="log_data_button" type="button">Log Data</button>
-                <button id="flush_button" type="button">Clear Data</button>
-                <p class="data" id="statisticsText"># objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
+                <h3 id="technical_note"></h3>
             </div>
-
-            <h3>Data Log:</h3>
-
-            <div class="ldiv">
-                <ol class="data" id="userList"></ol>
-            </div>
-        </div>
-        <!-- Note: Start our script -->
-                <script src="main.js"></script>
-            </div>
+            <!-- Note: Start our script -->
+            <script src="main.js"></script>
+            <!-- </div> -->
 </body>
 
 </html>

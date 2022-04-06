@@ -14,22 +14,13 @@
     margin: 0px;
 }
 
-
-/* #self_picture {
-    width: 10px;
-} */
-
 #welcome {
     background-color: #C0C0C0;
     border: 2px solid powderblue;
 }
 
 .space {
-    padding: 10px;
-}
-
-.data {
-    font-family: Courier, Arial, Helvetica;
+    height: 1%;
 }
 
 #mytag {
@@ -38,14 +29,19 @@
 
 .body {
     font-family: 'Courier New', Courier, monospace;
-    border: 2px solid red;
-    margin: auto;
+    border: 0px solid red;
+    margin: 0px;
 }
 
 body {
     text-align: justify;
-    /* background: black; */
-    /* max-width: 1400px; */
+    padding: 0%;
+    margin: 0px;
+}
+
+button {
+    vertical-align: top;
+    padding: 0px;
 }
 
 h1 {
@@ -58,45 +54,115 @@ h2 {
 
 h3 {
     font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0px;
+    margin: 0%;
+    /* font-size: 1.5vw; */
 }
 
 p {
-    /* padding:0px; 
-   margin:0px;  */
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
-    /* border: 2px solid red; */
+    font-size: 1.5vw;
+    overflow: hidden;
 }
 
 ol {
-    overflow: scroll;
-    width: 95%;
-    height: 100%;
+    /* background: #ff9999; */
+    padding: 3%;
+}
+
+ol li {
+    /* background: #ffe5e5; */
+    /* color: darkred; */
+    /* padding: 5px; */
+    margin-left: 8%;
+    font-family: Courier, Arial, Helvetica;
+    font-size: 0.88vw;
     text-align: left;
-    background-color: #11574041;
-    border-radius: 8px;
+}
+
+
+/* } */
+
+.raw_data_item {
+    font-family: Courier, Arial, Helvetica;
+    text-align: left;
+    font-size: 0.85vw;
+    margin: 1%;
+}
+
+
+/* Note: scrollbar adapted from w3 tutorial
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #115740;
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #115740;
 }
 
 .ldiv {
     height: 300px;
+    background-color: #115740;
+    width: 50%;
 }
 
 .width_lim {
     text-align: center;
-    /* max-width: 880px; */
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
-.map_height_lim {
-    max-height: 880px;
+.height_lim {
+    max-height: 100%;
     overflow: hidden;
 }
 
+.x_y_lim {
+    text-align: center;
+    padding-left: 1%;
+    padding-right: 1%;
+    overflow: hidden;
+}
 
-/* #self_picture {
-    padding-bottom: 100px;
-} */
+.centerTool {
+    margin: auto;
+}
+
+
+/* Set the size of the div element that contains the map */
+
+.google-map {
+    height: 100%;
+    width: 100%;
+    background-color: #11574085;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    /* padding-bottom: 5px; */
+}
 
 
 /* Clear floats after the columns */
@@ -108,32 +174,15 @@ ol {
 }
 
 
-/* Set the size of the div element that contains the map */
-
-.google-map {
-    height: 50%;
-    /* The height is 400 pixels */
-    width: 100%;
-    /* The width is the width of the web page */
-    /* overflow: hidden;
-    position: relative;
-    padding: 10px;
-    border: 2px solid blue; */
-    /* new */
-    width: 100%;
-    background-color: #11574085;
-    border-radius: 8px;
-    overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-    /* padding-bottom: 5px; */
-}
-
-
 /* navigation below (fron w3schools) */
 
 #wm_link_img {
     max-width: 5px;
     overflow: hidden;
+}
+
+.infoHeading {
+    font-size: 2vw;
 }
 
 
@@ -159,17 +208,26 @@ ol {
     }
 }
 
+.control_text {
+    position: absolute;
+    height: 100%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 /* Style the links inside the navigation bar */
 
 .topnav a {
     float: left;
-    /* color: #115740; */
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 1%;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 2vw;
     font-family: Arial, Helvetica, sans-serif;
     transition: font-size 200ms;
 }
@@ -179,28 +237,63 @@ ol {
 
 .topnav a:hover {
     border-radius: 25px;
-    /* color: #F0B323; */
     color: #F0B323;
-    font-size: 19px;
+    font-size: 2.2vw;
 }
 
 
 /* Add a color to the active/current link */
 
 .topnav a.active {
-    /* background-color: #04AA6D; */
-    color: white;
     display: block;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
     border-radius: 8px;
+    color: #F0B323;
+    font-size: 2vw;
+}
+
+
+/* Style the links inside the navigation bar */
+
+.controlnav a {
+    float: center;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 0.5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: font-size 200ms;
+}
+
+
+/* Change the color of links on hover */
+
+.controlnav a:hover {
+    border-radius: 25px;
+    color: #F0B323;
+    font-size: 0.5vw;
+}
+
+
+/* Add a color to the active/current link */
+
+.controlnav a.active {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    border-radius: 8px;
+    color: #F0B323;
+    font-size: 0.5vw;
+    ;
 }
 
 .center {
     margin: auto;
     width: 90%;
-    /* border: 5px solid #FFFF00; */
     padding: 15px;
     max-width: 1400px;
 }
@@ -213,25 +306,209 @@ ol {
 .column_left {
     text-align: justify;
     float: left;
-    width: 63%;
-    padding-right: 1%;
-    padding-left: 14px;
-    /* background-color: #f3f3f3; */
+    width: 74%;
+    padding: 1%;
+    border: 1%;
     background-color: #1157401b;
     border-radius: 15px;
 }
 
 .column_right {
     text-align: left;
-    float: left;
-    width: 33%;
+    float: right;
+    width: 23%;
     padding-bottom: 5px;
-    /* padding-top: 15px; */
-    /* padding-bottom: 150px; */
-    padding-left: 1%;
+    /* padding-left: 1%; */
     border-radius: 15px;
+    overflow: hidden;
+}
+
+.column_set_tool {
+    width: 100%;
+    background-color: aqua;
+}
+
+.column_left_tool {
+    text-align: justify;
+    float: left;
+    width: 63%;
+    padding-right: 1%;
+    border-radius: 8px;
+}
+
+.column_right_tool {
+    text-align: justify;
+    float: left;
+    width: 36%;
+    max-height: 100%;
+}
+
+.column_set_control {
+    width: 100%;
+    height: 100%;
+}
+
+.column_left_control {
+    /* padding-top: 2%; */
+    text-align: center;
+    float: left;
+    width: 49%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #115740;
+    transition: background-color 200ms;
+}
+
+
+/* Change the color of column on hover */
+
+.column_left_control:hover {
+    transition-delay: 100ms;
+    text-align: center;
+    float: left;
+    width: 49%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #F0B323;
+    ;
+}
+
+.column_right_control {
+    text-align: center;
+    float: right;
+    width: 49%;
+    height: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #115740;
+    transition: background-color 200ms;
+}
+
+
+/* Change the color of column on hover */
+
+.column_right_control:hover {
+    transition-delay: 100ms;
+    /* text-align: justify; */
+    text-align: center;
+    width: 49%;
+    height: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #F0B323;
+    transition: background-color 200ms;
+}
+
+.tool_view {
+    border-radius: 100px;
 }
 
 .page_block {
     background-color: #505050;
+}
+
+.log_label {
+    margin: 1%;
+    text-align: center;
+    font-size: 0.85vw;
+    padding: 0%;
+}
+
+.rows {
+    height: 100%;
+    overflow: visible;
+}
+
+.row_one {
+    height: 10%;
+    background-color: #11574085;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.row_two {
+    height: 10%;
+    border-radius: 8px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.row_three {
+    height: 78%;
+    background-color: #11574085;
+    border-radius: 8px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.control_center {}
+
+.data_raw {
+    font-family: Courier, Arial, Helvetica;
+    font-size: 0.85vw;
+}
+
+.data_raw_list {
+    margin: 0%;
+    padding-top: 0%;
+}
+
+.data_control {
+    font-family: Courier, Arial, Helvetica;
+    font-size: 1.2vw;
+    text-align: center;
+    overflow: hidden;
+    float: center;
+    margin-top: 2.5%;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.button_1 {
+    height: 100%;
+    width: 49%;
+    padding-right: 2%;
+    float: left;
+    font-size: 0.85vw;
+    overflow: hidden;
+    background-color: #115740;
+    border-radius: 8px;
+    border: 2px #115740;
+    transition: font-size 200ms;
+    font-size: 2.1vw;
+    color: white;
+}
+
+.button_2 {
+    height: 100%;
+    width: 49%;
+    float: right;
+    font-size: 0.85vw;
+    overflow: visible;
+    background-color: #115740;
+    border-radius: 8px;
+    border: 2px #115740;
+    transition: font-size 200ms;
+    font-size: 2.1vw;
+    color: white;
+}
+
+
+/* Change the color of column on hover */
+
+.button_1:hover {
+    transition-delay: 100ms;
+    font-size: 2.3vw;
+    color: #F0B323;
+}
+
+.button_2:hover {
+    transition-delay: 100ms;
+    font-size: 2.3vw;
+    color: #F0B323;
 }

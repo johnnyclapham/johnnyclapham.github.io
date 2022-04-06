@@ -36,18 +36,20 @@ function pull_data() {
                 //Note: Log all our values (debugging)
                 console.log("key: " + key + " RSSI: " + childRSSI);
 
-                //Note: Currently, we add all data to our html list
-                var node = document.createElement("LI");
-                var textnode = document.createTextNode("rssi:   {" + childRSSI + "}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}");
-                node.appendChild(textnode);
-                document.getElementById("userList").appendChild(node);
+                // //Note: Currently, we add all data to our html list
+                // var node = document.createElement("LI");
+                // var textnode = document.createTextNode(index_number + ": rssi:   {" + childRSSI + "}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}");
+                // node.appendChild(textnode);
+                // document.getElementById("userList").appendChild(node);
 
                 // Note: Update Statitistics
                 numObjects++;
                 currTime = new Date().toLocaleString();
                 retTime = Date.now() - start;
                 // Note: Set statistics values
-                document.getElementById("statisticsText").innerHTML = String("# objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
+                update_retrieve_stats(document, numObjects, retTime, currTime);
+
+                // document.getElementById("statisticsText").innerHTML = String("Number of objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
 
                 // Note: Make RSSI positive for easy processing
                 childRSSI *= -1;
@@ -73,13 +75,17 @@ function pull_data() {
     });
 }
 
+function update_retrieve_stats(document, numObjects, retTime, currTime) {
+    document.getElementById("statisticsText").innerHTML = String("Number of objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
+}
+
 
 
 
 function log_data() {
     //Note: First we flush data in case we are reloading
     flush_data();
-
+    var index_number = 1;
     var currTime, retTime, numObjects = 0;
     var start = Date.now();
 
@@ -97,7 +103,14 @@ function log_data() {
 
                 //Note: We add all data to our html list
                 var node = document.createElement("LI");
-                var textnode = document.createTextNode("rssi:   {" + childRSSI + "}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}");
+                // var node = document.createElement("P");
+
+                const textToPrint = " rssi:   {" + childRSSI + " dBm}   @   lat/lng:   {" + childLAT + " , " + childLONG + "}";
+
+                var textnode = document.createTextNode(textToPrint);
+
+                textnode.className = "raw_data_item";
+                // textnode.className = "data_raw_list"
                 node.appendChild(textnode);
                 document.getElementById("userList").appendChild(node);
 
@@ -106,7 +119,8 @@ function log_data() {
                 currTime = new Date().toLocaleString();
                 retTime = Date.now() - start;
                 // Note: Set statistics values
-                document.getElementById("statisticsText").innerHTML = String("# objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
+                update_retrieve_stats(document, numObjects, retTime, currTime);
+                // document.getElementById("statisticsText").innerHTML = String("Number of objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
 
                 // Note: Make RSSI positive for easy processing
                 childRSSI *= -1;
@@ -115,6 +129,8 @@ function log_data() {
                 // Note: Add data to our heatMapData var
                 var invertedRssiNormalized = 1 - normalized_childRSSI;
                 console.log("RSSI: " + childRSSI + " || normalized: " + normalized_childRSSI + " || inverted: " + invertedRssiNormalized);
+                // Note: Increase the index for printing the data
+                index_number++;
             });
         } else {
             // Note: In case of empty database

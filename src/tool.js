@@ -15,7 +15,7 @@ import {
     initMap
 } from './map.js'
 
-// pull_data();
+pull_data();
 log_data();
 
 // var get_button = document.getElementById('get_button');
@@ -30,6 +30,7 @@ flush_button.onclick = function() {
 var log_data_button = document.getElementById('log_data_button');
 log_data_button.onclick = function() {
     log_data();
+    pull_data();
 }
 
 // var left_button = document.getElementById('left_control');

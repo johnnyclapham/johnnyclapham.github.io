@@ -51,16 +51,11 @@ function pull_data(mode) {
                     });
                 } else if (mode == "circle") {
                     // Create circle dataset
-                    // Note: look at these papers for normalization techniques:
-                    // https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8950559&casa_token=yJx9BzHcKuEAAAAA:CM5VIDCl9rawNcu3SBzAuaZx2uz8zyvoW8Hm2Jxss4AuKP4gNM3VhPay0hvOHNF75acwvLJl6VU&tag=1
-                    // https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6240312&casa_token=8fV-pWg-WnsAAAAA:9pxgAJ7ouCwZMJGCygwvqzszICLRu3G3y7gy9s2Brd41I1t3I3K3Rj1pknQvxlOdSuXgoF48VFw
                     circleMapData.push({
                         location: new google.maps.LatLng(childLAT, childLONG),
                         weight: invertedRssiNormalized
                     })
                 }
-                // heatMapData.push({ location: new google.maps.LatLng(childLAT, childLONG), weight: invertedRssiNormalized });
-                // console.log("RSSI: " + childRSSI + " || normalized: " + normalized_childRSSI + " || inverted: " + invertedRssiNormalized);
             });
         } else {
             // Note: In case of empty database
@@ -126,8 +121,6 @@ function log_data() {
                 retTime = Date.now() - start;
                 // Note: Set statistics values
                 update_retrieve_stats(document, numObjects, retTime, currTime);
-                // document.getElementById("statisticsText").innerHTML = String("Number of objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
-
                 // Note: Make RSSI positive for easy processing
                 childRSSI *= -1;
                 // Note: Normalize our RSSI to be on scale {0-1}

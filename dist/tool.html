@@ -33,30 +33,35 @@
 
             <div class="tool_view">
                 <div class="column_set_tool">
-                    <div class="column_left_tool">
+                    <div class="column_left_tool" id="column_left_tool">
                         <div id="map" class="google-map">
                             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrDAcPqqdS5Ph5cDmyDbwa0pd6bb9syg&libraries=visualization" async></script>
                         </div>
                     </div>
-                    <div class="column_right_tool">
-                        <div class="row_one">
-                            <div class="control_center">
-                                <p class="data_control" id="statisticsText">Number of objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
+                    <div class="column_right_tool" id="column_right_tool">
+                        <div class="rows">
+                            <div class="row_one">
+                                <div class="control_center">
+                                    <!-- <div class="space"></div> -->
+                                    <p class="data_control" id="statisticsText">Number of objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p>
+
+                                </div>
                             </div>
-                        </div>
+                            <div class="space"></div>
+                            <div class="row_two">
+                                <button class="button_1" id="log_data_button" type="button">Refresh Data</button>
+                                <button class="button_2" id="flush_button" type="button">Clear Data</button>
 
-                        <div class="row_two">
-                            <button class="button_1" id="log_data_button" type="button">Refresh Data</button>
-                            <button class="button_2" id="flush_button" type="button">Clear Data</button>
-
-                        </div>
-
-
-                        <div class="row_three">
-                            <p class="log_label">Data Log</p>
-                            <!-- <p class="data_control" id="statisticsText"># objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p> -->
-                            <!-- <ol class="data_raw" id="userList"></ol> -->
-                            <div class="raw_data_item" id="userList"></div>
+                            </div>
+                            <div class="space"></div>
+                            <div class="row_three">
+                                <!-- <div class="log_div"> -->
+                                <p class="log_label">Data Log</p>
+                                <!-- <p class="data_control" id="statisticsText"># objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved: N/A </p> -->
+                                <!-- <ol class="data_raw" id="userList"></ol> -->
+                                <div class="raw_data_item" id="userList"></div>
+                                <!-- </div> -->
+                            </div>
                         </div>
                     </div>
 

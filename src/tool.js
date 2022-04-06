@@ -16,7 +16,8 @@ import {
 } from './map.js'
 
 import {
-    resizeView
+    resizeView,
+    writeTechnicalNote
 } from './style.js'
 
 resizeView();
@@ -24,6 +25,7 @@ window.addEventListener('resize', function(event) {
     resizeView();
 }, true);
 
+writeTechnicalNote();
 pull_data();
 log_data();
 

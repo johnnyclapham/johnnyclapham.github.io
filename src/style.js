@@ -7,6 +7,16 @@ function resizeView() {
 
 }
 
+function writeTechnicalNote() {
+    var technical_note = document.getElementById("technical_note");
+    technical_note.innerHTML = "Anaximander Data Visualization Tool (Work in Progress Version 0.1)";
+    technical_note.style.float = "right";
+    technical_note.style.fontSize = "1.07vw";
+    technical_note.style.padding = "0.5%";
+
+}
+
 export {
-    resizeView
+    resizeView,
+    writeTechnicalNote
 }

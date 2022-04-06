@@ -5,6 +5,31 @@ import { fire_config } from './fire_config.js'
 // Note: We are using firebase database; not firebase firestore!
 
 function initMap() {
+    // // Try HTML5 geolocation.
+    // if (navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition(
+    //         (position) => {
+    //             const pos = {
+    //                 lat: position.coords.latitude,
+    //                 lng: position.coords.longitude,
+    //             };
+
+    //             // infoWindow.setPosition(pos);
+    //             // infoWindow.setContent("Location found.");
+    //             // infoWindow.open(map);
+    //             // map.setCenter(pos);
+    //         },
+    //         () => {
+    //             handleLocationError(true, infoWindow, map.getCenter());
+    //         }
+    //     );
+    // } else {
+    //     // Browser doesn't support Geolocation
+    //     handleLocationError(false, infoWindow, map.getCenter());
+    // }
+
+
+
     console.log("new google map initialization")
     const mshall = {
         lat: 37.27014788306701,
@@ -12,7 +37,8 @@ function initMap() {
     };
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 17,
-        center: mshall,
+        // center: mshall,
+        // center: pos,
         mapTypeId: 'satellite'
     });
     const marker = new google.maps.Marker({
@@ -47,9 +73,40 @@ function changeRadius(heatmap) {
     heatmap.set("radius", heatmap.get("radius") ? null : 80);
 }
 
+function centerOnLocation(map) {
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
+
+                // infoWindow.setPosition(pos);
+                // infoWindow.setContent("Location found.");
+                // infoWindow.open(map);
+                map.setCenter(pos);
+                var marker = new google.maps.Marker({
+                    position: pos,
+                    title: "Current Location"
+                });
+                marker.setMap(map);
+            },
+            () => {
+                handleLocationError(true, infoWindow, map.getCenter());
+            }
+        );
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
+}
+
 function setHeat(heatMapData) {
 
     const map = initMap();
+    centerOnLocation(map);
     var heatmap = new google.maps.visualization.HeatmapLayer({
         data: heatMapData
     });
@@ -60,8 +117,38 @@ function setHeat(heatMapData) {
     changeRadius(heatmap);
 }
 
+function setCircle(circleMapData) {
+    const map = initMap();
+    centerOnLocation(map);
+    var color;
+    for (const location in circleMapData) {
+        console.log("location: " + circleMapData[location].location);
+        console.log("weight: " + circleMapData[location].weight);
+        // Add the circle for this city to the map.
+        if (circleMapData[location].weight < 0.5) {
+            color = "#ff0000"
+        } else if (circleMapData[location].weight >= 0.5 && circleMapData[location].weight < 0.8) {
+            color = "#fffb00"
+        } else if (circleMapData[location].weight >= 0.8) {
+            color = "#00ff37"
+        }
+        const locationCircle = new google.maps.Circle({
+            strokeColor: "#FF0000",
+            strokeOpacity: 0,
+            strokeWeight: 0.5,
+            fillColor: color,
+            fillOpacity: 0.45,
+            map,
+            center: circleMapData[location].location,
+            radius: circleMapData[location].weight * (2 ** 4)
+                // radius: circleMapData[location].weight * (2 ** 2)
+        });
+    }
+}
+
 export {
     // Note: Add our functions to this export!
     initMap,
-    setHeat
+    setHeat,
+    setCircle
 }

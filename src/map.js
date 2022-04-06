@@ -62,17 +62,24 @@ function setHeat(heatMapData) {
 
 function setCircle(circleMapData) {
     const map = initMap();
-
+    var color;
     for (const location in circleMapData) {
         console.log("location: " + circleMapData[location].location);
         console.log("weight: " + circleMapData[location].weight);
         // Add the circle for this city to the map.
+        if (circleMapData[location].weight < 0.5) {
+            color = "#ff0000"
+        } else if (circleMapData[location].weight >= 0.5 && circleMapData[location].weight < 0.8) {
+            color = "#fffb00"
+        } else if (circleMapData[location].weight >= 0.8) {
+            color = "#00ff37"
+        }
         const locationCircle = new google.maps.Circle({
             strokeColor: "#FF0000",
             strokeOpacity: 0.4,
-            strokeWeight: 2,
-            fillColor: "#FF0000",
-            fillOpacity: 0.35,
+            strokeWeight: 0.5,
+            fillColor: color,
+            fillOpacity: 0.45,
             map,
             center: circleMapData[location].location,
             radius: circleMapData[location].weight * (2 ** 4)

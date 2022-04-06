@@ -51,6 +51,9 @@ function pull_data(mode) {
                     });
                 } else if (mode == "circle") {
                     // Create circle dataset
+                    // Note: look at these papers for normalization techniques:
+                    // https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8950559&casa_token=yJx9BzHcKuEAAAAA:CM5VIDCl9rawNcu3SBzAuaZx2uz8zyvoW8Hm2Jxss4AuKP4gNM3VhPay0hvOHNF75acwvLJl6VU&tag=1
+                    // https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6240312&casa_token=8fV-pWg-WnsAAAAA:9pxgAJ7ouCwZMJGCygwvqzszICLRu3G3y7gy9s2Brd41I1t3I3K3Rj1pknQvxlOdSuXgoF48VFw
                     circleMapData.push({
                         location: new google.maps.LatLng(childLAT, childLONG),
                         weight: invertedRssiNormalized

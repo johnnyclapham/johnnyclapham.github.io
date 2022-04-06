@@ -592,6 +592,7 @@ ol li {
     transition-delay: 100ms;
     font-size: 2.3vw;
     color: #F0B323;
+    /* color: #00ff37; */
     border-block-start-width: thick;
     border: thick solid #F0B323;
 }

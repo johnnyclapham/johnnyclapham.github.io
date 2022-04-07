@@ -10,7 +10,7 @@ function resizeView() {
 
 function writeTechnicalNote() {
     var technical_note = document.getElementById("technical_note");
-    technical_note.innerHTML = "Anaximander Data Visualization Tool (Work in Progress Version 0.2)";
+    technical_note.innerHTML = "Anaximander Data Visualization Tool (Work in Progress Version 0.3)";
     technical_note.style.float = "right";
     technical_note.style.fontSize = "1.07vw";
     technical_note.style.padding = "0.5%";

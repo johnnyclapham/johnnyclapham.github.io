@@ -18,6 +18,7 @@ function writeTechnicalNote() {
 }
 
 function setButtonInactive(buttonNameToDeactivate) {
+
     document.getElementById(buttonNameToDeactivate).style.border = "thick solid #f0b22300";
     document.getElementById(buttonNameToDeactivate).style.fontSize = "2.1vw";
     document.getElementById(buttonNameToDeactivate).style.color = "white";

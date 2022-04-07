@@ -472,9 +472,9 @@ ol li {
 }
 
 .control_center {
-    padding: 0;
+    /* padding: 0;
     margin: 0;
-    height: 100%;
+    height: 100%; */
 }
 
 .data_raw {
@@ -488,21 +488,17 @@ ol li {
 }
 
 .data_control {
-    /* height: 100%; */
+    height: 100%;
     font-family: Courier, Arial, Helvetica;
     font-size: 1vw;
     text-align: left;
-    float: center;
-    position: absolute;
-    margin: 0;
-    padding: 1%;
-    border: 2px #115740;
-    float: center;
-    padding-top: 1.5%;
-    padding-left: 2%;
     text-decoration: none;
     font-size: 1.2vmin;
     overflow: hidden;
+    display: inline-block;
+    padding-top: 3%;
+    padding-left: 7%;
+    margin: auto;
 }
 
 .button_1a {

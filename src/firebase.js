@@ -77,7 +77,7 @@ function pull_data(mode) {
 }
 
 function update_retrieve_stats(document, numObjects, retTime, currTime) {
-    document.getElementById("statisticsText").innerHTML = String("Number of objects retrieved: " + numObjects + " <br> Retrieve time taken: " + retTime + " ms <br> Data last retrieved:  " + currTime + "");
+    document.getElementById("statisticsText").innerHTML = String("Objects Fetched: " + numObjects + " <br>Fetch RTT: " + retTime + " ms <br>Last Fetch: " + currTime + "");
 }
 
 
@@ -151,7 +151,7 @@ function flush_data() {
         userList.removeChild(userList.firstChild);
     }
 
-    document.getElementById("statisticsText").innerHTML = String("# objects retrieved: N/A <br> Retrieve time taken: N/A <br> Data last retrieved:  N/A");
+    document.getElementById("statisticsText").innerHTML = String("Objects Fetched: N/A <br> Fetch RTT: N/A <br> Last Fetch: N/A ");
 }
 
 export {

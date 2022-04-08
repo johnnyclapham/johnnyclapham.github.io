@@ -10,7 +10,7 @@ function resizeView() {
 
 function writeTechnicalNote() {
     var technical_note = document.getElementById("technical_note");
-    technical_note.innerHTML = "Anaximander Data Visualization Tool (Work in Progress Version 0.2)";
+    technical_note.innerHTML = "Anaximander Data Visualization Tool (Work in Progress Version 0.3)";
     technical_note.style.float = "right";
     technical_note.style.fontSize = "1.07vw";
     technical_note.style.padding = "0.5%";
@@ -18,6 +18,7 @@ function writeTechnicalNote() {
 }
 
 function setButtonInactive(buttonNameToDeactivate) {
+
     document.getElementById(buttonNameToDeactivate).style.border = "thick solid #f0b22300";
     document.getElementById(buttonNameToDeactivate).style.fontSize = "2.1vw";
     document.getElementById(buttonNameToDeactivate).style.color = "white";

@@ -47,6 +47,7 @@ heat_button.onclick = function() {
     var mode = "heat";
     pull_data(mode);
     setButtonActive(mode);
+    log_data();
 }
 
 var circle_button = document.getElementById('circle_button');
@@ -54,4 +55,5 @@ circle_button.onclick = function() {
     var mode = "circle";
     pull_data(mode);
     setButtonActive(mode);
+    log_data();
 }

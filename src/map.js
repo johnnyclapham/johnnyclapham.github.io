@@ -4,32 +4,32 @@ import { getDatabase, ref, child, get, Database } from "firebase/database";
 import { fire_config } from './fire_config.js'
 // Note: We are using firebase database; not firebase firestore!
 
+var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+var icons = {
+    parking: {
+        icon: iconBase + 'parking_lot_maps.png'
+    },
+    library: {
+        icon: iconBase + 'library_maps.png'
+    },
+    info: {
+        icon: iconBase + 'info-i_maps.png'
+    }
+};
+const house_icon = {
+    // url: 'https://maps.google.com/mapfiles/kml/shapes/info-i_maps.png', // url
+    url: '../assets/small_house.png'
+};
+
+//Note: This is not my image design! Credit where credit is due:
+// Please check out the author's work:
+// https://tokyodachi.com/collections/william-mary/tag
+// I am borrowing this artwork, since this tool is only for educational purposes currently
+const current_location_icon = {
+    url: '../assets/small_tokyodachi.png'
+};
+
 function initMap() {
-    // // Try HTML5 geolocation.
-    // if (navigator.geolocation) {
-    //     navigator.geolocation.getCurrentPosition(
-    //         (position) => {
-    //             const pos = {
-    //                 lat: position.coords.latitude,
-    //                 lng: position.coords.longitude,
-    //             };
-
-    //             // infoWindow.setPosition(pos);
-    //             // infoWindow.setContent("Location found.");
-    //             // infoWindow.open(map);
-    //             // map.setCenter(pos);
-    //         },
-    //         () => {
-    //             handleLocationError(true, infoWindow, map.getCenter());
-    //         }
-    //     );
-    // } else {
-    //     // Browser doesn't support Geolocation
-    //     handleLocationError(false, infoWindow, map.getCenter());
-    // }
-
-
-
     console.log("new google map initialization")
     const mshall = {
         lat: 37.27014788306701,
@@ -37,14 +37,47 @@ function initMap() {
     };
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 17,
-        // center: mshall,
+        center: mshall,
         // center: pos,
         mapTypeId: 'satellite'
     });
     const marker = new google.maps.Marker({
         position: mshall,
         map: map,
+        icon: house_icon,
     });
+
+    const contentString =
+        '<div id="content">' +
+        '<div id="siteNotice">' +
+        "</div>" +
+        '<h3 id="firstHeading" class="firstHeading">Home of Anaximander</h3>' +
+        '<div id="bodyContent">' +
+        "<p> We use MS hall as the focus point for our pilot evaluation. Your current location is indicated by the bouncing marker. </p>" +
+        "</p>" +
+        "</div>" +
+        "</div>";
+    const infowindow = new google.maps.InfoWindow({
+        content: contentString,
+    });
+    marker.addListener("mouseover", () => {
+        infowindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false,
+        });
+    });
+
+    marker.addListener("mouseout", () => {
+        infowindow.close();
+    });
+
+    // marker.addListener('mouseout', function() {
+    //     closeInfoWindow();
+    //     mouseOverInfoWindow = false;
+    // });
+
+    centerOnLocation(map);
     return (map);
 }
 
@@ -86,12 +119,39 @@ function centerOnLocation(map) {
                 // infoWindow.setPosition(pos);
                 // infoWindow.setContent("Location found.");
                 // infoWindow.open(map);
-                map.setCenter(pos);
+                // map.setCenter(pos);
                 var marker = new google.maps.Marker({
                     position: pos,
-                    title: "Current Location"
+                    title: "Current Location",
+                    optimized: false, // <-- required for animated gif
+                    icon: current_location_icon
                 });
+                marker.setAnimation(google.maps.Animation.BOUNCE);
                 marker.setMap(map);
+
+                const contentString =
+                    '<div id="content">' +
+                    '<div id="siteNotice">' +
+                    "</div>" +
+                    '<h3 id="firstHeading" class="firstHeading">Current Location</h3>' +
+                    '<div id="bodyContent">' +
+                    "<p> You are located here. </p>" +
+                    "</p>" +
+                    "</div>" +
+                    "</div>";
+                const infowindow = new google.maps.InfoWindow({
+                    content: contentString,
+                });
+                marker.addListener("mouseover", () => {
+                    infowindow.open({
+                        anchor: marker,
+                        map,
+                        shouldFocus: false,
+                    });
+                });
+                marker.addListener("mouseout", () => {
+                    infowindow.close();
+                });
             },
             () => {
                 handleLocationError(true, infoWindow, map.getCenter());
@@ -106,7 +166,7 @@ function centerOnLocation(map) {
 function setHeat(heatMapData) {
 
     const map = initMap();
-    centerOnLocation(map);
+    // centerOnLocation(map);
     var heatmap = new google.maps.visualization.HeatmapLayer({
         data: heatMapData
     });
@@ -119,7 +179,7 @@ function setHeat(heatMapData) {
 
 function setCircle(circleMapData) {
     const map = initMap();
-    centerOnLocation(map);
+    // centerOnLocation(map);
     var color;
     for (const location in circleMapData) {
         // console.log("location: " + circleMapData[location].location);

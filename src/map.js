@@ -122,8 +122,8 @@ function setCircle(circleMapData) {
     centerOnLocation(map);
     var color;
     for (const location in circleMapData) {
-        console.log("location: " + circleMapData[location].location);
-        console.log("weight: " + circleMapData[location].weight);
+        // console.log("location: " + circleMapData[location].location);
+        // console.log("weight: " + circleMapData[location].weight);
         // Add the circle for this city to the map.
         if (circleMapData[location].weight < 0.5) {
             color = "#ff0000"
@@ -140,8 +140,8 @@ function setCircle(circleMapData) {
             fillOpacity: 0.45,
             map,
             center: circleMapData[location].location,
-            radius: circleMapData[location].weight * (2 ** 4)
-                // radius: circleMapData[location].weight * (2 ** 2)
+            radius: 10
+                // radius: circleMapData[location].weight * (2 ** 4)
         });
     }
 }

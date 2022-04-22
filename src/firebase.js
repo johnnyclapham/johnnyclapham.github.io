@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, child, get, Database } from "firebase/database";
 import { fire_config } from './fire_config.js'
-import { setHeat, setCircle } from './map.js'
+import { setHeat, setCircle, new_setCircle } from './map.js'
 // Note: We are using firebase database; not firebase firestore!
 
 
@@ -13,6 +13,8 @@ function pull_data(mode) {
 
     //Note: First we flush data in case we are reloading
     flush_data();
+
+
 
     var currTime, retTime, numObjects = 0;
     var start = Date.now();
@@ -51,6 +53,8 @@ function pull_data(mode) {
                         weight: invertedRssiNormalized
                     });
                 } else if (mode == "circle") {
+
+
                     // Create circle dataset
                     circleMapData.push({
                         location: new google.maps.LatLng(childLAT, childLONG),
@@ -70,6 +74,8 @@ function pull_data(mode) {
             // Note: If we are in circle mode, plot circle plot
             console.log("circle");
             setCircle(circleMapData);
+            // new_setCircle(circleMapData);
+
         }
         // setHeat(heatMapData);
     }).catch((error) => {

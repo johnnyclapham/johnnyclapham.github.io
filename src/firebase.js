@@ -52,7 +52,7 @@ function pull_data(mode) {
                         location: new google.maps.LatLng(childLAT, childLONG),
                         weight: invertedRssiNormalized
                     });
-                } else if (mode == "circle") {
+                } else if (mode == "circle" || mode == "weak" || mode == "mid" || mode == "strong") {
 
 
                     // Create circle dataset
@@ -70,10 +70,10 @@ function pull_data(mode) {
         if (mode == "heat") {
             // Note: If we are in heat mode, plot heatmap
             setHeat(heatMapData);
-        } else if (mode == "circle") {
+        } else if (mode == "circle" || mode == "weak" || mode == "mid" || mode == "strong") {
             // Note: If we are in circle mode, plot circle plot
-            console.log("circle");
-            setCircle(circleMapData);
+            console.log("circle mode");
+            setCircle(circleMapData, mode);
             // new_setCircle(circleMapData);
 
         }

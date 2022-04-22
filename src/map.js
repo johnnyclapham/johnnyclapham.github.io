@@ -179,7 +179,7 @@ function setHeat(heatMapData) {
     changeRadius(heatmap);
 }
 
-function setCircle(circleMapData) {
+function setCircle(circleMapData, mode) {
     const map = initMap();
     // centerOnLocation(map);
     var color;
@@ -233,9 +233,17 @@ function setCircle(circleMapData) {
 
     for (var i = 0; i < weak_locationCircles.length; i++) {
         // Note: Show whichever circle set is desired:
-        weak_locationCircles[i].setMap(map);
-        mid_locationCircles[i].setMap(map);
-        strong_locationCircles[i].setMap(map);
+        if (weak_locationCircles[i] && mode == 'weak') {
+            weak_locationCircles[i].setMap(map);
+        }
+        if (mid_locationCircles[i] && mode == 'mid') {
+            mid_locationCircles[i].setMap(map);
+        }
+        if (strong_locationCircles[i] && mode == 'strong') {
+            strong_locationCircles[i].setMap(map);
+        }
+        // mid_locationCircles[i].setMap(map);
+        // strong_locationCircles[i].setMap(map);
     }
 
 

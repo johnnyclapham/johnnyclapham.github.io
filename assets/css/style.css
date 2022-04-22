@@ -535,8 +535,9 @@ ol li {
 
 .button_1b {
     height: 100%;
-    width: 49%;
+    width: 24%;
     padding-right: 2%;
+    margin-right: 1%;
     float: left;
     font-size: 0.85vw;
     overflow: hidden;
@@ -551,7 +552,39 @@ ol li {
 
 .button_2b {
     height: 100%;
-    width: 49%;
+    width: 24%;
+    float: left;
+    font-size: 0.85vw;
+    overflow: visible;
+    background-color: #115740;
+    border-radius: 8px;
+    border: 2px #115740;
+    transition: font-size 200ms;
+    font-size: 2.1vw;
+    color: white;
+    /* border: thick solid #f0b22300; */
+}
+
+.button_3b {
+    height: 100%;
+    width: 24%;
+    padding-right: 1%;
+    /* float: right; */
+    margin-left: 2%;
+    font-size: 0.85vw;
+    overflow: hidden;
+    background-color: #115740;
+    border-radius: 8px;
+    border: 2px #115740;
+    transition: font-size 200ms;
+    font-size: 2.1vw;
+    color: white;
+    /* border: thick solid #F0B323; */
+}
+
+.button_4b {
+    height: 100%;
+    width: 24%;
     float: right;
     font-size: 0.85vw;
     overflow: visible;
@@ -588,6 +621,22 @@ ol li {
 }
 
 .button_2b:hover {
+    transition-delay: 100ms;
+    font-size: 2.3vw;
+    color: #F0B323;
+    border-block-start-width: thick;
+    border: thick solid #F0B323;
+}
+
+.button_3b:hover {
+    transition-delay: 100ms;
+    font-size: 2.3vw;
+    color: #F0B323;
+    border-block-start-width: thick;
+    border: thick solid #F0B323;
+}
+
+.button_4b:hover {
     transition-delay: 100ms;
     font-size: 2.3vw;
     color: #F0B323;

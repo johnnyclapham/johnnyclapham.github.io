@@ -44,6 +44,7 @@ function pull_data(mode) {
                 var normalized_childRSSI = (childRSSI - 30) / (130 - 30);
                 // Note: Add data to our heatMapData var
                 var invertedRssiNormalized = 1 - normalized_childRSSI;
+
                 if (mode == "heat") {
                     heatMapData.push({
                         location: new google.maps.LatLng(childLAT, childLONG),
@@ -100,7 +101,7 @@ function log_data() {
                 var childRSSI = childSnapshot.child("rssi").val();
                 var childLAT = childSnapshot.child("latitude").val();
                 var childLONG = childSnapshot.child("longitude").val();
-                console.log("key: " + key + " RSSI: " + childRSSI);
+                // console.log("key: " + key + " RSSI: " + childRSSI);
 
                 //Note: We add all data to our html list
                 var node = document.createElement("LI");
@@ -127,7 +128,7 @@ function log_data() {
                 var normalized_childRSSI = (childRSSI - 30) / (130 - 30);
                 // Note: Add data to our heatMapData var
                 var invertedRssiNormalized = 1 - normalized_childRSSI;
-                console.log("RSSI: " + childRSSI + " || normalized: " + normalized_childRSSI + " || inverted: " + invertedRssiNormalized);
+                // console.log("RSSI: " + childRSSI + " || normalized: " + normalized_childRSSI + " || inverted: " + invertedRssiNormalized);
                 // Note: Increase the index for printing the data
                 index_number++;
             });

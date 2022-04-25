@@ -46,14 +46,29 @@ var heat_button = document.getElementById('heat_button');
 heat_button.onclick = function() {
     var mode = "heat";
     pull_data(mode);
-    setButtonActive(mode);
+    // setButtonActive(mode);
     log_data();
 }
 
-var circle_button = document.getElementById('circle_button');
+var circle_button = document.getElementById('weak_button');
 circle_button.onclick = function() {
-    var mode = "circle";
+    var mode = "weak";
     pull_data(mode);
-    setButtonActive(mode);
+    // setButtonActive(mode);
+    log_data();
+}
+
+var circle_button = document.getElementById('mid_button');
+circle_button.onclick = function() {
+    var mode = "mid";
+    pull_data(mode);
+    // setButtonActive(mode);
+    log_data();
+}
+var circle_button = document.getElementById('strong_button');
+circle_button.onclick = function() {
+    var mode = "strong";
+    pull_data(mode);
+    // setButtonActive(mode);
     log_data();
 }

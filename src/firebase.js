@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, child, get, Database } from "firebase/database";
 import { fire_config } from './fire_config.js'
-import { setHeat, setCircle } from './map.js'
+import { setHeat, setCircle, new_setCircle } from './map.js'
 // Note: We are using firebase database; not firebase firestore!
 
 
@@ -13,6 +13,8 @@ function pull_data(mode) {
 
     //Note: First we flush data in case we are reloading
     flush_data();
+
+
 
     var currTime, retTime, numObjects = 0;
     var start = Date.now();
@@ -44,12 +46,15 @@ function pull_data(mode) {
                 var normalized_childRSSI = (childRSSI - 30) / (130 - 30);
                 // Note: Add data to our heatMapData var
                 var invertedRssiNormalized = 1 - normalized_childRSSI;
+
                 if (mode == "heat") {
                     heatMapData.push({
                         location: new google.maps.LatLng(childLAT, childLONG),
                         weight: invertedRssiNormalized
                     });
-                } else if (mode == "circle") {
+                } else if (mode == "circle" || mode == "weak" || mode == "mid" || mode == "strong") {
+
+
                     // Create circle dataset
                     circleMapData.push({
                         location: new google.maps.LatLng(childLAT, childLONG),
@@ -65,10 +70,12 @@ function pull_data(mode) {
         if (mode == "heat") {
             // Note: If we are in heat mode, plot heatmap
             setHeat(heatMapData);
-        } else if (mode == "circle") {
+        } else if (mode == "circle" || mode == "weak" || mode == "mid" || mode == "strong") {
             // Note: If we are in circle mode, plot circle plot
-            console.log("circle");
-            setCircle(circleMapData);
+            console.log("circle mode");
+            setCircle(circleMapData, mode);
+            // new_setCircle(circleMapData);
+
         }
         // setHeat(heatMapData);
     }).catch((error) => {
@@ -100,7 +107,7 @@ function log_data() {
                 var childRSSI = childSnapshot.child("rssi").val();
                 var childLAT = childSnapshot.child("latitude").val();
                 var childLONG = childSnapshot.child("longitude").val();
-                console.log("key: " + key + " RSSI: " + childRSSI);
+                // console.log("key: " + key + " RSSI: " + childRSSI);
 
                 //Note: We add all data to our html list
                 var node = document.createElement("LI");
@@ -127,7 +134,7 @@ function log_data() {
                 var normalized_childRSSI = (childRSSI - 30) / (130 - 30);
                 // Note: Add data to our heatMapData var
                 var invertedRssiNormalized = 1 - normalized_childRSSI;
-                console.log("RSSI: " + childRSSI + " || normalized: " + normalized_childRSSI + " || inverted: " + invertedRssiNormalized);
+                // console.log("RSSI: " + childRSSI + " || normalized: " + normalized_childRSSI + " || inverted: " + invertedRssiNormalized);
                 // Note: Increase the index for printing the data
                 index_number++;
             });

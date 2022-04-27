@@ -142,8 +142,7 @@ function log_data() {
             // Note: In case of empty database
             console.log("No data available");
         }
-        //Note: After all objects have been iterated through
-        // Do something
+        //Note: After all objects have been iterated through, do something
         console.log("Data log complete.");
     }).catch((error) => {
         console.error(error);

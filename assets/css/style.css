@@ -643,3 +643,32 @@ ol li {
     border-block-start-width: thick;
     border: thick solid #F0B323;
 }
+
+.weakRSSItext {
+    color: red;
+}
+
+.midRSSItext {
+    color: rgb(255, 174, 0);
+}
+
+.strongRSSItext {
+    color: green;
+}
+
+.map-info-window {
+    width: 5vw;
+    text-align: left;
+    /* height: 1vh; */
+    /* font-size: 1vw; */
+}
+
+
+/* .infow-window-content { */
+
+
+/* width: 7vw;
+    height: 7vh; */
+
+
+/* } */

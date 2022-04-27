@@ -165,6 +165,36 @@ function centerOnLocation(map) {
     }
 }
 
+function addInfoWindowToCircle(contentString, location, map) {
+    var marker = new google.maps.Marker({
+        // position: circleMapData[location].location,
+        position: location,
+        title: "Signal Strength: ",
+        // optimized: false, // <-- required for animated gif
+        // visable: false,
+        // icon: current_location_icon
+    });
+    marker.setOpacity(0);
+    // marker.setAnimation(google.maps.Animation.BOUNCE);
+    marker.setMap(map);
+    const infowindow1 = new google.maps.InfoWindow({
+        content: contentString,
+        // position: circleMapData[location].location
+        position: location
+    });
+    marker.addListener("mouseover", () => {
+        infowindow1.open({
+            // anchor: marker,
+            map,
+            shouldFocus: false,
+        });
+        // document.getElementById("weakRSSItext").style.color = "red";
+    });
+    marker.addListener("mouseout", () => {
+        infowindow1.close();
+    });
+}
+
 function setHeat(heatMapData) {
 
     const map = initMap();
@@ -188,6 +218,10 @@ function setCircle(circleMapData, mode) {
     var strong_locationCircles = [];
 
     for (const location in circleMapData) {
+
+
+
+
         // Note: Do something based upon location weight
         if (circleMapData[location].weight < 0.5) {
             color = "#ff0000";
@@ -196,12 +230,36 @@ function setCircle(circleMapData, mode) {
                 strokeOpacity: 0,
                 strokeWeight: 0.5,
                 fillColor: color,
-                fillOpacity: 0.9,
+                fillOpacity: 0.5,
                 // map, // do not set map yet -> we will set when we want to view
                 center: circleMapData[location].location,
-                radius: 10
-                    // radius: circleMapData[location].weight * (2 ** 4)
+                radius: 10,
+                // clickable: true
+                // radius: circleMapData[location].weight * (2 ** 4)
             }));
+
+
+
+            const contentString =
+                '<div class="map-info-window">' +
+                '<div class="info-window-content" id="content">' +
+                '<div id="siteNotice">' +
+                "</div>" +
+                '<h3 id="weakRSSItext" class="weakRSSItext"> Weak Signal Strength </h3>' +
+                '<div id="bodyContent">' +
+                // "<p> Network connectivity in this location needs improvement. </p>" +
+                "</p>" +
+                "</div>" +
+                "</div>" +
+                "</div>";
+
+            // addInfoWindowToCircle(contentString, circleMapData[location].location, map);
+
+            if (mode == "weak") {
+                addInfoWindowToCircle(contentString, circleMapData[location].location, map);
+            }
+
+
         } else if (circleMapData[location].weight >= 0.5 && circleMapData[location].weight < 0.8) {
             color = "#fffb00";
             mid_locationCircles.push(new google.maps.Circle({
@@ -209,12 +267,28 @@ function setCircle(circleMapData, mode) {
                 strokeOpacity: 0,
                 strokeWeight: 0.5,
                 fillColor: color,
-                fillOpacity: 0.9,
+                fillOpacity: 0.5,
                 // map, // do not set map yet -> we will set when we want to view
                 center: circleMapData[location].location,
-                radius: 10
+                radius: 10,
+                clickable: true
                     // radius: circleMapData[location].weight * (2 ** 4)
             }));
+            const contentString =
+                '<div id="content">' +
+                '<div id="siteNotice">' +
+                "</div>" +
+                '<h3 id="midRSSItext" class="midRSSItext"> Mid Signal Strength </h3>' +
+                '<div id="bodyContent">' +
+                // "<p> Network connectivity in this location may need improvement. </p>" +
+                "</p>" +
+                "</div>" +
+                "</div>";
+            if (mode == "mid") {
+                addInfoWindowToCircle(contentString, circleMapData[location].location, map);
+            }
+            // addInfoWindowToCircle(contentString, circleMapData[location].location, map);
+
         } else if (circleMapData[location].weight >= 0.8) {
             color = "#00ff37";
             strong_locationCircles.push(new google.maps.Circle({
@@ -222,12 +296,27 @@ function setCircle(circleMapData, mode) {
                 strokeOpacity: 0,
                 strokeWeight: 0.5,
                 fillColor: color,
-                fillOpacity: 0.9,
+                fillOpacity: 0.5,
                 // map, // do not set map yet -> we will set when we want to view
                 center: circleMapData[location].location,
-                radius: 10
+                radius: 10,
+                clickable: true
                     // radius: circleMapData[location].weight * (2 ** 4)
             }));
+            const contentString =
+                '<div id="content">' +
+                '<div id="siteNotice">' +
+                "</div>" +
+                '<h3 id="strongRSSItext" class="strongRSSItext"> Strong Signal Strength </h3>' +
+                '<div id="bodyContent">' +
+                // "<p> This is a great place to connect to the network. </p>" +
+                "</p>" +
+                "</div>" +
+                "</div>";
+            if (mode == "strong") {
+                addInfoWindowToCircle(contentString, circleMapData[location].location, map);
+            }
+            // addInfoWindowToCircle(contentString, circleMapData[location].location, map);
         }
     }
 
@@ -235,12 +324,15 @@ function setCircle(circleMapData, mode) {
         // Note: Show whichever circle set is desired:
         if (weak_locationCircles[i] && mode == 'weak') {
             weak_locationCircles[i].setMap(map);
+            // addInfoWindowToCircle(contentString, circleMapData[location].location, map);
         }
         if (mid_locationCircles[i] && mode == 'mid') {
             mid_locationCircles[i].setMap(map);
+            // addInfoWindowToCircle(contentString, circleMapData[location].location, map);
         }
         if (strong_locationCircles[i] && mode == 'strong') {
             strong_locationCircles[i].setMap(map);
+            // addInfoWindowToCircle(contentString, circleMapData[location].location, map);
         }
         // mid_locationCircles[i].setMap(map);
         // strong_locationCircles[i].setMap(map);
@@ -249,76 +341,78 @@ function setCircle(circleMapData, mode) {
 
 }
 
+// function filter(map, )
+
 
 //Note: Currently not being used -> it is too slow due to heavy computation (3rd party utility)
-function new_setCircle(circleMapData) {
-    const map = initMap();
-    var color;
-    var weak_paths = [];
-    var mid_paths = [];
-    var strong_paths = [];
-    for (const location in circleMapData) {
-        // Add the circle for this city to the map.
-        if (circleMapData[location].weight < 0.5) {
-            weak_paths.push(drawCircle(circleMapData[location].location, 10, 1));
-            var cityCircle = new google.maps.Polygon({
-                fillColor: "#ff0000",
-                strokeOpacity: 0.5,
-                strokeWeight: 0,
-                fillOpacity: 0.5,
-                map: map,
-                paths: weak_paths,
-                center: circleMapData[location].location,
-                radius: 10
-            });
+// function new_setCircle(circleMapData) {
+//     const map = initMap();
+//     var color;
+//     var weak_paths = [];
+//     var mid_paths = [];
+//     var strong_paths = [];
+//     for (const location in circleMapData) {
+//         // Add the circle for this city to the map.
+//         if (circleMapData[location].weight < 0.5) {
+//             weak_paths.push(drawCircle(circleMapData[location].location, 10, 1));
+//             var cityCircle = new google.maps.Polygon({
+//                 fillColor: "#ff0000",
+//                 strokeOpacity: 0.5,
+//                 strokeWeight: 0,
+//                 fillOpacity: 0.5,
+//                 map: map,
+//                 paths: weak_paths,
+//                 center: circleMapData[location].location,
+//                 radius: 10
+//             });
 
-            // color = "#ff0000"
-        } else if (circleMapData[location].weight >= 0.5 && circleMapData[location].weight < 0.8) {
-            mid_paths.push(drawCircle(circleMapData[location].location, 10, 1));
-            new google.maps.Polygon({
-                fillColor: "#fffb00",
-                strokeOpacity: 0.5,
-                strokeWeight: 0,
-                fillOpacity: 0.5,
-                map: map,
-                paths: weak_paths,
-                center: circleMapData[location].location,
-                radius: 10
-            });
-            // color = "#fffb00"
-        } else if (circleMapData[location].weight >= 0.8) {
-            strong_paths.push(drawCircle(circleMapData[location].location, 10, 1));
-            new google.maps.Polygon({
-                fillColor: "#00ff37",
-                strokeOpacity: 0.5,
-                strokeWeight: 0,
-                fillOpacity: 0.5,
-                map: map,
-                paths: weak_paths,
-                center: circleMapData[location].location,
-                radius: 10
-            });
-            // color = "#00ff37"
-        }
-    }
-    // console.log(weak_paths);
+//             // color = "#ff0000"
+//         } else if (circleMapData[location].weight >= 0.5 && circleMapData[location].weight < 0.8) {
+//             mid_paths.push(drawCircle(circleMapData[location].location, 10, 1));
+//             new google.maps.Polygon({
+//                 fillColor: "#fffb00",
+//                 strokeOpacity: 0.5,
+//                 strokeWeight: 0,
+//                 fillOpacity: 0.5,
+//                 map: map,
+//                 paths: weak_paths,
+//                 center: circleMapData[location].location,
+//                 radius: 10
+//             });
+//             // color = "#fffb00"
+//         } else if (circleMapData[location].weight >= 0.8) {
+//             strong_paths.push(drawCircle(circleMapData[location].location, 10, 1));
+//             new google.maps.Polygon({
+//                 fillColor: "#00ff37",
+//                 strokeOpacity: 0.5,
+//                 strokeWeight: 0,
+//                 fillOpacity: 0.5,
+//                 map: map,
+//                 paths: weak_paths,
+//                 center: circleMapData[location].location,
+//                 radius: 10
+//             });
+//             // color = "#00ff37"
+//         }
+//     }
+//     // console.log(weak_paths);
 
-    new google.maps.Polygon({
-        paths: weak_paths,
-        strokeColor: "#ff0000",
-        strokeOpacity: 0.35,
-        strokeWeight: 0,
-        fillColor: "#FF0000",
-        fillOpacity: 0.35,
-        map: map
-    });
+//     new google.maps.Polygon({
+//         paths: weak_paths,
+//         strokeColor: "#ff0000",
+//         strokeOpacity: 0.35,
+//         strokeWeight: 0,
+//         fillColor: "#FF0000",
+//         fillOpacity: 0.35,
+//         map: map
+//     });
 
-}
+// }
 
 export {
     // Note: Add our functions to this export!
     initMap,
     setHeat,
-    setCircle,
-    new_setCircle
+    setCircle
+    // new_setCircle
 }

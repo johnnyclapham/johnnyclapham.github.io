@@ -1,0 +1,48 @@
+﻿Study Guide: Anaximander
+1. Greetings, Introduction, and Walk-through tutorial [5 min]
+
+ We begin by establishing a need-based use-case for Anaximander. We present the definition for RSS, which is critical to understanding the functionality of our tool. We clarify what Anaximander is to be used for (AP RSS strength); and give limited examples of what Anaximander does NOT to be used for (internet connection speed, etc.).
+
+We present briefly an outline of the features of the Anaximander tool and the data that we are visualizing.
+
+2. Anaximander Visualization Tool Exploration [5 min]
+
+ After our introduction, we let users engage in a free-roam of Anaximander. Users can click on tool menu navigation bars, view buttons such as "Heat Plot" and "Circle Plot", Google Map buttons such as zoom/ Fullscreen, view toggles, and resize the entire tool window. We encourage users to take notes of any features that act surprisingly. (buggy behaviors etc.)
+
+3. Anaximander Exercises [5-10 min]
+
+ We ask users to perform a series of specific tasks to answer specific questions using Anaximander in order to assess its ability to visualize areas with strong or weak RSS to an AP.
+
+Example exercise questions:
+
+“What is the dominating connection quality in the Wren building?”
+
+“What is the connection quality at the main/front entrance of the W&M recreation/ fitness center?”
+
+“If I go to the concert tonight at the Martha Wren Briggs Amphitheatre at Lake Matoaka, will I be able to submit a last-minute Blackboard assignment?”
+
+“It is going to be a beautiful day, and I want to do my Zoom call from the middle of Sunken Gardens. How will my connection be if I sit in the center of the garden?”
+
+“How is the network infrastructure within the historic Capitol building? Does it need improvement?”
+
+“Do the spectators at the W&M football stadium have an acceptable connection quality?”
+
+4. Follow-up interview [5 min]
+
+ How was your experience with the tool UI? Seemless or clunky?
+
+ Does Anaximander help you in identifying physical areas with strong or weak RSS to an AP?
+
+ Are you able to tell what differences in Heat/ Circle color indicate?
+
+ Does Anaximander make intuitive use of the color data channels? If not, what needs improvement?
+
+ Does the satellite map view improve or worsen the readability of Anaximander?
+
+ Is anything distracting from the main goal of Anaximander?
+
+ Do you envision a tool such as Anaximander being useful to your own daily life?
+
+ What additional functionality would you like to see provided by Anaximander?
+
+5. Post-study survey [5 min]

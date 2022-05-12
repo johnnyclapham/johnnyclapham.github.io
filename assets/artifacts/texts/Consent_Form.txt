@@ -1,0 +1,9 @@
+﻿Consent Form: Anaximander
+We invite you to be a part of our research study. Participation is completely voluntary. You may ask any questions about the study at any time. If you decide to participate, you will sign a copy of this consent form and will be supplied with a copy for your records.
+Anaximander is a data collection and visualization tool for locating areas with the strong or weak signal strength to an Access Point. It is our goal to empower users to have the best possible network connection by giving them constant access to real-time network connectivity data. They can use this data to optimize their physical location, or the placement of additional network infrastructure.
+To make Anaximander better, we need the user's input. You will be asked to use our online tool webpage. You will be given a technical demo of the tool to help you get started. We will ask you to complete certain exercises and subsequently, ask you to answer a series of questions to gauge the effectiveness of our tool.
+The study should take no longer than 30 minutes to complete. There is no physical risk or discomfort required to participate in this study. There is no incentive to participate in this study. There is no cost to participate in this study. No personally-identifying information will be collected from you. Your responses to our questions will be recorded with an anonymous identifier.
+Finally, after the study has been completed, you will be given a follow-up survey to complete your participation.
+Today’s date: _____________________________
+Your name: _______________________________
+Your signature: ____________________________

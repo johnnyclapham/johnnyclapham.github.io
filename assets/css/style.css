@@ -509,13 +509,14 @@ ol li {
     width: 49%;
     padding-right: 2%;
     float: left;
-    font-size: 0.85vw;
+    /* font-size: 0.85vw; */
     overflow: hidden;
     background-color: #115740;
     border-radius: 8px;
     border: 2px #115740;
     transition: font-size 200ms;
-    font-size: 2.1vw;
+    /* font-size: 2.1vw; */
+    font-size: 1.7vw;
     color: white;
 }
 
@@ -523,76 +524,97 @@ ol li {
     height: 100%;
     width: 49%;
     float: right;
-    font-size: 0.85vw;
+    /* font-size: 0.85vw; */
     overflow: visible;
     background-color: #115740;
     border-radius: 8px;
     border: 2px #115740;
     transition: font-size 200ms;
-    font-size: 2.1vw;
+    /* font-size: 2.1vw; */
+    font-size: 1.7vw;
     color: white;
 }
 
 .button_1b {
     height: 100%;
-    width: 24%;
+    width: 19%;
     padding-right: 2%;
     margin-right: 1%;
     float: left;
-    font-size: 0.85vw;
+    /* font-size: 0.85vw; */
     overflow: hidden;
     background-color: #115740;
     border-radius: 8px;
     border: 2px #115740;
     transition: font-size 200ms;
-    font-size: 2.1vw;
+    /* font-size: 2.1vw; */
+    font-size: 1.7vw;
     color: white;
     /* border: thick solid #F0B323; */
 }
 
 .button_2b {
     height: 100%;
-    width: 24%;
+    width: 19%;
     float: left;
-    font-size: 0.85vw;
+    /* font-size: 0.85vw; */
     overflow: visible;
     background-color: #115740;
     border-radius: 8px;
     border: 2px #115740;
     transition: font-size 200ms;
-    font-size: 2.1vw;
+    /* font-size: 2.1vw; */
+    font-size: 1.7vw;
     color: white;
     /* border: thick solid #f0b22300; */
 }
 
 .button_3b {
     height: 100%;
-    width: 24%;
+    width: 19%;
     padding-right: 1%;
     /* float: right; */
     margin-left: 2%;
-    font-size: 0.85vw;
+    /* font-size: 0.75vw; */
     overflow: hidden;
     background-color: #115740;
     border-radius: 8px;
     border: 2px #115740;
     transition: font-size 200ms;
-    font-size: 2.1vw;
+    /* font-size: 2.1vw; */
+    font-size: 1.7vw;
     color: white;
     /* border: thick solid #F0B323; */
 }
 
 .button_4b {
     height: 100%;
-    width: 24%;
-    float: right;
-    font-size: 0.85vw;
+    width: 19%;
+    /* float: right; */
+    /* font-size: 0.85vw; */
     overflow: visible;
     background-color: #115740;
     border-radius: 8px;
     border: 2px #115740;
     transition: font-size 200ms;
-    font-size: 2.1vw;
+    /* font-size: 2.1vw; */
+    font-size: 1.7vw;
+    color: white;
+    /* border: thick solid #f0b22300; */
+}
+
+.button_5b {
+    height: 100%;
+    width: 19%;
+    float: right;
+    /* font-size: 0.85vw; */
+    overflow: visible;
+    background-color: #115740;
+    border-radius: 8px;
+    border: 2px #115740;
+    transition: font-size 200ms;
+    /* font-size: 2.1vw; */
+    font-size: 1.7vw;
     color: white;
     /* border: thick solid #f0b22300; */
 }
@@ -602,19 +624,19 @@ ol li {
 
 .button_1a:hover {
     transition-delay: 100ms;
-    font-size: 2.3vw;
+    font-size: 1.9vw;
     color: #F0B323;
 }
 
 .button_2a:hover {
     transition-delay: 100ms;
-    font-size: 2.3vw;
+    font-size: 1.9vw;
     color: #F0B323;
 }
 
 .button_1b:hover {
     transition-delay: 100ms;
-    font-size: 2.3vw;
+    font-size: 1.9vw;
     color: #F0B323;
     border-block-start-width: thick;
     border: thick solid #F0B323;
@@ -622,7 +644,7 @@ ol li {
 
 .button_2b:hover {
     transition-delay: 100ms;
-    font-size: 2.3vw;
+    font-size: 1.9vw;
     color: #F0B323;
     border-block-start-width: thick;
     border: thick solid #F0B323;
@@ -630,7 +652,7 @@ ol li {
 
 .button_3b:hover {
     transition-delay: 100ms;
-    font-size: 2.3vw;
+    font-size: 2.1vw;
     color: #F0B323;
     border-block-start-width: thick;
     border: thick solid #F0B323;
@@ -638,7 +660,15 @@ ol li {
 
 .button_4b:hover {
     transition-delay: 100ms;
-    font-size: 2.3vw;
+    font-size: 1.9vw;
+    color: #F0B323;
+    border-block-start-width: thick;
+    border: thick solid #F0B323;
+}
+
+.button_5b:hover {
+    transition-delay: 100ms;
+    font-size: 1.9vw;
     color: #F0B323;
     border-block-start-width: thick;
     border: thick solid #F0B323;

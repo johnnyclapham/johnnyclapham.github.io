@@ -50,24 +50,32 @@ heat_button.onclick = function() {
     log_data();
 }
 
-var circle_button = document.getElementById('weak_button');
-circle_button.onclick = function() {
+var circle_button_weak = document.getElementById('weak_button');
+circle_button_weak.onclick = function() {
     var mode = "weak";
     pull_data(mode);
     // setButtonActive(mode);
     log_data();
 }
 
-var circle_button = document.getElementById('mid_button');
-circle_button.onclick = function() {
+var circle_button_mid = document.getElementById('mid_button');
+circle_button_mid.onclick = function() {
     var mode = "mid";
     pull_data(mode);
     // setButtonActive(mode);
     log_data();
 }
-var circle_button = document.getElementById('strong_button');
-circle_button.onclick = function() {
+var circle_button_strong = document.getElementById('strong_button');
+circle_button_strong.onclick = function() {
     var mode = "strong";
+    pull_data(mode);
+    // setButtonActive(mode);
+    log_data();
+}
+
+var circle_button_all = document.getElementById('all_button');
+circle_button_all.onclick = function() {
+    var mode = "all";
     pull_data(mode);
     // setButtonActive(mode);
     log_data();

@@ -199,6 +199,9 @@ ol li {
 /* Add a black background color to the top navigation */
 
 .topnav {
+    /* padding-top: 5em;
+    padding-bottom: 5em; */
+    padding: 1em;
     width: 100%;
     background-color: #115740;
     border-radius: 8px;
@@ -232,7 +235,7 @@ ol li {
 /* Style the links inside the navigation bar */
 
 .topnav a {
-    float: left;
+    /* float: left; */
     color: white;
     text-align: center;
     padding: 1%;
@@ -319,30 +322,56 @@ ol li {
     max-width: 1400px;
 }
 
+/* ── FLEX LAYOUT FOR COLUMN SETS ── */
 .column_set {
+    display: flex;
+    align-items: stretch;     /* ← make both sides the same height */
+    justify-content: space-between;
+    gap: 1.5em;
+    margin: 2em 0;
+    padding-bottom: 0;
+  }
+  
+  /* disable floats on your left/right spans */
+  .column_set > .column_left,
+  .column_set > .column_right,
+  .column_set > .column_left_50,
+  .column_set > .column_right_50 {
+    float: none !important;
+    width: auto !important;
+  }
+  
+  /* now explicitly size each side via flex‑basis */
+  /* About Me uses your original 74/23 split: */
+  .column_left  { flex: 0 0 70%; }
+  .column_right { flex: 0 0 23%; }
+  
+  /* Movement & Electrolyte sections use a 50/50 split: */
+  .column_left_50,
+  .column_right_50 {
+    flex: 0 0 47%;
+  }
+
+  .column_left,
+  .column_left_50 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1157401b;  /* ← your translucent green background */
+    padding: 2em;                 /* optional: gives breathing room */
+    border-radius: 15px;          /* match image rounding*/
+  }
+  
+  /* make sure images fill their flex‐box properly */
+  .column_set img {
+    display: block;
     width: 100%;
-    padding-bottom: 200px;
-}
+    height: auto;
+    border-radius: 15px;  /* preserve your rounding */
+  }
 
-.column_left {
-    text-align: justify;
-    float: left;
-    width: 74%;
-    padding: 1%;
-    border: 1%;
-    background-color: #1157401b;
-    border-radius: 15px;
-}
 
-.column_right {
-    text-align: left;
-    float: right;
-    width: 23%;
-    padding-bottom: 5px;
-    /* padding-left: 1%; */
-    border-radius: 15px;
-    overflow: hidden;
-}
+
 
 .column_set_tool {
     width: 100%;

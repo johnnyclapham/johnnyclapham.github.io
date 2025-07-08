@@ -1454,7 +1454,8 @@ ol li {
   .skills-grid .skill-icon {
     display: flex;
     justify-content: center; /* or flex-start */
-    align-items: start;
+    align-items: center !important;
+    align-self: center !important;
     padding-top: 0 !important;
      margin-top: 0 !important;
   }
@@ -1468,4 +1469,6 @@ ol li {
     padding: 0 !important;
     display: block;
   }
+  
+
   

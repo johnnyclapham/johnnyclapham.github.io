@@ -1448,6 +1448,7 @@ ol li {
     column-gap: 3em;
     row-gap:    2em;
     align-items: start;
+
   }
   
   /* 2) Make the icon cell a flex container (optional, but nice for centering) */
@@ -1462,13 +1463,79 @@ ol li {
   
   /* 3) The only width rule your icons need */
   .skills-grid .skill-icon img {
-    width: 80% !important;   /* fill that 1fr column */
+    width: 77% !important;   /* fill that 1fr column */
     height: auto !important;  /* preserve aspect ratio */
     max-width: none !important; 
     margin: 0 !important;
     padding: 0 !important;
     display: block;
   }
+
+  /* 1) Define your two‐column grid: text / icon */
+.skills-grid {
+    display: grid;
+    /* e.g. text gets 4fr, icon gets 1fr */
+    grid-template-columns: 4fr 1fr;
+    column-gap: 2em;
+    row-gap:    2em;
+    /* keep text top‐aligned... */
+    align-items: start;
+  }
+  
+  /* 2) Make each icon cell stretch to the full row height */
+  .skills-grid .skill-icon {
+    /* this makes the icon wrapper as tall as its grid row */
+    height: 100%;
+    /* now center its contents vertically & horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* kill any old paddings or margins */
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* 3) Only size the <img> inside the wrapper */
+  .skills-grid .skill-icon img {
+    width: clamp(24px, 6vw, 40px);
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  
   
 
+  /* 1) Make your skills grid two columns, text/icon */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 4fr 1fr; /* text takes 80%, icon 20% */
+    column-gap: 2em;                /* horizontal gutter */
+    row-gap:    2em;                /* vertical gutter */
+    align-items: start;             /* text stays top-aligned */
+  }
   
+  /* 2) Add some breathing room on the right side of your text cells */
+  .skills-grid .skill-text {
+    padding-right: 1.5em;
+  }
+  
+  /* 3) Center each icon vertically in its grid row */
+  .skills-grid .skill-icon {
+    align-self: center; /* vertical centering within the row */
+    display: flex;      /* allow horizontal centering if you like */
+    justify-content: center;
+    margin: 0;          /* kill any stray margins */
+    padding: 0;         /* kill any stray padding */
+  }
+
+  
+  
+  /* 4) Only size the <img> itself—you can clamp it if you want fluid scaling */
+  .skills-grid .skill-icon img {
+    width: clamp(24px, 6vw, 40px);
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }

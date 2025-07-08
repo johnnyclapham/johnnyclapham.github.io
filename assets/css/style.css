@@ -1,3 +1,5 @@
+
+
 @import "";
 .tight {
     padding: 0px;
@@ -813,7 +815,7 @@ ol li {
     background-color: #1157401b;
     padding: 2em;
     border-radius: 15px;
-    flex: 0 0 83%;            /* same width you settled on */
+    flex: 0 0 77%;            /* same width you settled on */
   }
   
   /* 3) Icons column stays white, slides over to the right */
@@ -926,10 +928,10 @@ ol li {
   .skills-grid {
     position: relative;
     display: grid;
-    /* 83% text column, 17% icon column */
-    grid-template-columns: 83% 17%;
+    /* 77% text column, 17% icon column */
+    grid-template-columns: 77% 17%;
     column-gap: 1.5em;
-    row-gap: 2em;
+    row-gap: 4em;
     margin-top: 3em;
     /* padding around entire region so pseudo-bg has breathing room */
     /* padding: 2em 0; */
@@ -941,7 +943,7 @@ ol li {
     position: absolute;
     top: 0; 
     left: 0;
-    width: 83%;            /* exactly match the first column width */
+    width: 77%;            /* exactly match the first column width */
     height: 100%;
     background-color: #1157401b;
     border-radius: 15px 15px 15px 15px;
@@ -1030,8 +1032,8 @@ ol li {
      .skills-grid {
         position: relative;              /* for the pseudo-bg */
         display: grid;
-        /* 83% text column, 17% icon column */
-        grid-template-columns: 83% 17%;
+        /* 77% text column, 17% icon column */
+        grid-template-columns: 77% 17%;
         column-gap: 1.5em;               /* horizontal gutter */
         row-gap: 2em;                    /* vertical gutter = your margin-bottom */
         margin-top: 1em;                 /* keep your top spacing */
@@ -1044,7 +1046,7 @@ ol li {
         position: absolute;
         top: 0;
         left: 0;
-        width: 83%;                      /* exactly your first-column width */
+        width: 77%;                      /* exactly your first-column width */
         height: 100%;
         background-color: #1157401b;       /* your light-green tint */
         border-radius: 15px 15px 15px 15px;    /* round only left corners */
@@ -1103,10 +1105,10 @@ ol li {
   /* ── Your two-column grid inside the card ───────────── */
   .skills-grid {
     display: grid;
-    /* same 83/17 split as before */
-    grid-template-columns: 83% 17%;
+    /* same 77/17 split as before */
+    grid-template-columns: 77% 17%;
     column-gap: 2.5em;
-    row-gap: 0em;
+    row-gap: 2em;
   }
   
   /* ── Tint *only* the left (text) column inside that card ─ */
@@ -1115,7 +1117,7 @@ ol li {
     position: absolute;
     top: 0; 
     left: 0;
-    width: 83%;                     /* exactly your text-column width */
+    width: 77%;                     /* exactly your text-column width */
     height: 100%;
     background-color: #1157401b;      /* same tint */
     border-radius: 15px 15px 15px 15px;   /* round just the left side */
@@ -1211,7 +1213,7 @@ ol li {
 
   /* kill the 1em top-padding on all skill icons */
 .skills-grid .skill-icon img {
-    padding-top: 0 !important;
+    padding-top: 3em !important;
   }
 
 
@@ -1227,7 +1229,7 @@ ol li {
     position: absolute;
     top: 0;
     left: 0;
-    width: 83%;          /* same as your first‐column width */
+    width: 77%;          /* same as your first‐column width */
     height: 100%;
     background-color: #1157401b;  /* your green tint */
     border-radius: 15px 15px 15px 15px;  /* round only left side */
@@ -1259,7 +1261,7 @@ ol li {
     position: absolute;
     top: 0;
     left: 0;
-    width: 83%;                /* exactly your text-column width */
+    width: 77%;                /* exactly your text-column width */
     height: 100%;
     background-color: #1157401b;  /* your green tint */
     border-radius: 15px 15px 15px 15px;
@@ -1291,7 +1293,7 @@ ol li {
     position: absolute;
     top: 0;
     left: 0;
-    width: 83%;                   /* same as your text-column % */
+    width: 63%;                   /* same as your text-column % */
     height: 100%;
     background-color: #1157401b;  /* your green tint */
     border-radius: 15px 15px 15px 15px;  /* round only the left corners */
@@ -1321,4 +1323,14 @@ ol li {
 .skills-section {
     margin-top: 0    !important;  /* no gap above the green box */
     padding-top: -5em !important; /* just a little breathing room inside */
+  }
+
+
+  .skills-grid .skill-icon img {
+    padding-right: 2em;   /* shifts the actual image away from the right gutter */
+  }
+
+  /* 1) Target only the icon cells inside your skills grid */
+.skills-section .skills-grid .skill-icon {
+    padding-right: 2em !important;  /* ← tweak this until you see the gap you want */
   }

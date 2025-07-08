@@ -4,6 +4,8 @@
     margin: 0px;
 }
 
+
+
 .full {
     float: left;
     width: 100%;
@@ -344,7 +346,8 @@ ol li {
   /* now explicitly size each side via flex‑basis */
   /* About Me uses your original 74/23 split: */
   .column_left  { flex: 0 0 70%; }
-  .column_right { flex: 0 0 23%; }
+  /* .column_right { flex: 0 0 23%; } */
+  .column_right { flex: 0 0 26%; }
   
   /* Movement & Electrolyte sections use a 50/50 split: */
   .column_left_50,
@@ -725,6 +728,37 @@ ol li {
     /* font-size: 1vw; */
 }
 
+/* make each text block lining up nicely */
+.skill-text-block {
+    margin-bottom: 2em;  /* same spacing you’ll give your icons */
+  }
+  
+  /* size & space your icons */
+  .skill-icon {
+    display: block;
+    width: 100%;       /* fills that 10% column */
+    height: auto;
+    margin-bottom: 2em; /* matches your text-block spacing */
+  }
+  
+
+
+
+  /* exactly same padding you gave your electrolyte image containers */
+.skills-icons {
+    /* padding: 0 2em; */
+    padding-top: 4em; /* tweak this value until your icons line up */
+
+  }
+  
+  /* keep your existing icon sizing */
+  .skill-icon {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2em;
+  }
+  
 
 /* .infow-window-content { */
 
@@ -734,3 +768,240 @@ ol li {
 
 
 /* } */
+
+
+
+/* tint the whole section */
+.skills-section {
+    background-color: #e5f3ef;  /* same light green as your other sections */
+    padding: 2em;
+    border-radius: 15px;
+    margin-top: 3em;
+  }
+  
+  /* make a 2-column grid: text (85%) + icon (15%) */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    column-gap: 1em;
+    row-gap: 2em;          /* vertical spacing between rows */
+    align-items: start;    /* top-align each icon with its text */
+  }
+  
+  /* ensure your images fit nicely */
+  .skills-grid .skill-icon img {
+    width: 50%;
+    height: auto;
+    padding-left: 2em;
+    padding-top: 1em;
+    display: block;
+  }
+  
+
+
+
+
+
+
+  /* 1) Stop stretching both spans to the same height */
+.skills-flex {
+    align-items: flex-start;   /* instead of stretch */
+  }
+  
+  /* 2) Re‐tint only the left column */
+  .skills-flex .column_left {
+    background-color: #e5f3ef;
+    padding: 2em;
+    border-radius: 15px;
+    flex: 0 0 83%;            /* same width you settled on */
+  }
+  
+  /* 3) Icons column stays white, slides over to the right */
+  .skills-flex .column_right {
+    flex: 0 0 17%;
+    padding-left: 1.5em;       /* same gutter you like */
+  }
+  
+  /* 4) Use your grid inside the left column as before */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* just a single‐column grid since icons moved */
+    row-gap: 2em;
+  }
+  
+  /* 5) Hide the empty placeholders (we only needed them to consume grid rows) */
+  .skill-icon-empty {
+    display: none;
+  }
+  
+  /* 6) Icon sizing & vertical spacing */
+  .skill-icon {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin-bottom: 2em;        /* aligns each icon with each text row */
+  }
+
+
+
+  /* 1) Prevent the two columns from stretching to match heights */
+.skills-flex {
+    align-items: flex-start;
+  }
+  
+  /* 2) Tint only the left column */
+  .skills-flex .column_left {
+    background-color: #e5f3ef;  /* your light green */
+    padding: 2em;
+    border-radius: 15px;
+  }
+  
+  /* 3) Make the right column a vertical stack */
+  .skills-icons {
+    display: flex;
+    flex-direction: column;
+    padding-left: 4em;  /* space from the tinted edge */
+  }
+  
+  /* 4) Match the spacing in each column */
+  .skill-text-block,
+  .skill-icon {
+    margin-bottom: 2em; /* same vertical gap */
+  }
+  
+  /* 5) Icon sizing */
+  .skill-icon {
+    display: block;
+    width: 50%;
+    height: auto;
+  }
+  
+  
+
+  /* Target only the icons in your skills sidebar */
+.skills-icons .skill-icon {
+    width: 50% !important;
+    /* or, if you prefer a fixed size: width: 40px; */
+    height: auto;
+    padding-top: 10em;
+  }
+
+
+
+  /* 1) Create the 2-column grid for text + icons */
+.skills-container {
+    display: grid;
+    grid-template-columns: 83% 17%;  /* adjust to taste */
+    column-gap: 1.5em;               /* space between columns */
+    row-gap: 2em;                    /* space between rows */
+    margin-top: 3em;
+  }
+  
+  /* 2) Tint only the left column */
+  .skills-text-column {
+    background-color: #e5f3ef;
+    padding: 2em;
+    border-radius: 15px;
+  }
+  
+  /* 3) Leave the icon column white and stack icons */
+  .skills-icon-column {
+    display: grid;
+    grid-auto-rows: auto;   /* one row per icon */
+    row-gap: 2em;           /* match the text row-gap */
+    padding-left: 1.5em;    /* gutters from the text box */
+  }
+  
+  /* 4) Icon sizing */
+  .skill-icon {
+    width: 50px;   /* or 50% if you want relative to the icon cell */
+    height: auto;
+    justify-self: start; /* make sure they align under each other */
+  }
+  
+  /* 5) Text-blocks already get spacing via the grid row-gap */
+  .skill-text-block p {
+    margin: 0.5em 0 0;
+  }
+  .skills-grid {
+    position: relative;
+    display: grid;
+    /* 83% text column, 17% icon column */
+    grid-template-columns: 83% 17%;
+    column-gap: 1.5em;
+    row-gap: 2em;
+    margin-top: 3em;
+    /* padding around entire region so pseudo-bg has breathing room */
+    padding: 2em 0;
+  }
+  
+  /* draw the green box behind only the first column */
+  .skills-grid::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 83%;            /* exactly match the first column width */
+    height: 100%;
+    background-color: #e5f3ef;
+    border-radius: 15px 0 0 15px;
+    z-index: -1;
+  }
+  
+  /* make sure the heading & intro sit on top of the pseudo-bg */
+  .skills-grid > .infoHeading,
+  .skills-grid > .paraText,
+  .skills-grid .skill-text {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* text cells (no extra styling needed—they flow naturally) */
+  .skill-text strong {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  /* icon cells: stack the images vertically */
+  .skill-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  
+  /* size & space your icons */
+  .skill-icon img {
+    width: 30%;      /* half your previous size—tweak as needed */
+    height: auto;
+    margin-bottom: 2em;  /* same vertical gap as row-gap to keep them in step */
+  }
+  
+
+  /* 1) Push the entire icon column down */
+.column_set.skills-flex .column_right {
+    padding-top: 10em !important;  /* tweak this until it lines up */
+  }
+
+  /* push the entire icon‐column down to match the left padding */
+.skills-row > .column_right {
+    padding-top: 9em; /* fiddle this value until level */
+  }
+
+  /* target all skill‐icons in that row */
+.skills-row .column_right .skill-icon img {
+    width: 40px;     /* tweak this to your desired icon size */
+    height: auto;
+  }
+
+  /* shrink all of the icons in that skills‐row */
+.skills-row .column_right img.skill-icon {
+    width: 73% !important;  /* or whatever fixed size you prefer */
+    height: auto;
+    padding-bottom: 1em;
+  }
+
+  /* give yourself more breathing room above Skills */
+.column_set.skills-row {
+    /* override the inline 3em if necessary */
+    margin-top: 2em !important;
+  }

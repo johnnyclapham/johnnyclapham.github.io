@@ -782,7 +782,7 @@ ol li {
   /* make a 2-column grid: text (85%) + icon (15%) */
   .skills-grid {
     display: grid;
-    grid-template-columns: 90% 10%;
+    grid-template-columns: 85% 15%;
     column-gap: 1em;
     row-gap: 2em;          /* vertical spacing between rows */
     align-items: start;    /* top-align each icon with its text */
@@ -932,7 +932,7 @@ ol li {
     row-gap: 2em;
     margin-top: 3em;
     /* padding around entire region so pseudo-bg has breathing room */
-    /* padding: 2em 0; */
+    padding: 2em 0;
   }
   
   /* draw the green box behind only the first column */
@@ -944,7 +944,7 @@ ol li {
     width: 83%;            /* exactly match the first column width */
     height: 100%;
     background-color: #1157401b;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 0 0 15px;
     z-index: -1;
   }
   
@@ -1034,7 +1034,7 @@ ol li {
         grid-template-columns: 83% 17%;
         column-gap: 1.5em;               /* horizontal gutter */
         row-gap: 2em;                    /* vertical gutter = your margin-bottom */
-        margin-top: 1em;                 /* keep your top spacing */
+        margin-top: 3em;                 /* keep your top spacing */
         padding: 2em 0;                  /* breathing room for the pseudo-bg */
       }
       
@@ -1047,7 +1047,7 @@ ol li {
         width: 83%;                      /* exactly your first-column width */
         height: 100%;
         background-color: #1157401b;       /* your light-green tint */
-        border-radius: 15px 15px 15px 15px;    /* round only left corners */
+        border-radius: 15px 0 0 15px;    /* round only left corners */
         z-index: -1;
       }
       
@@ -1105,7 +1105,7 @@ ol li {
     display: grid;
     /* same 83/17 split as before */
     grid-template-columns: 83% 17%;
-    column-gap: 2.5em;
+    column-gap: 1.5em;
     row-gap: 0em;
   }
   
@@ -1118,7 +1118,7 @@ ol li {
     width: 83%;                     /* exactly your text-column width */
     height: 100%;
     background-color: #1157401b;      /* same tint */
-    border-radius: 15px 15px 15px 15px;   /* round just the left side */
+    border-radius: 15px 0 0 15px;   /* round just the left side */
     z-index: -1;
   }
   
@@ -1192,20 +1192,12 @@ ol li {
 
   /* tighten up the space above and inside the Skills card */
 .skills-section {
-    /* pull the whole card up closer to whatever is above it */
-    margin-top: 0.5em;    /* or “0” if you want no outer gap */
-
-    /* reduce the padding *inside* at the top of the card */
-    padding-top: 0em;     /* instead of the old “2em” */
-
     /* reduce the gap between the previous section and this one */
-
     margin-top: 1em;   
     margin-bottom: 1em;
   
     /* give only 1em of space at the top & bottom, keep 2em on the sides */
     padding: 0em 2em;  
-    /* padding-top: -4em */
   }
   
 
@@ -1230,7 +1222,7 @@ ol li {
     width: 83%;          /* same as your first‐column width */
     height: 100%;
     background-color: #1157401b;  /* your green tint */
-    border-radius: 15px 15px 15px 15px;  /* round only left side */
+    border-radius: 15px 0 0 15px;  /* round only left side */
     z-index: -1;
   }
   
@@ -1262,7 +1254,7 @@ ol li {
     width: 83%;                /* exactly your text-column width */
     height: 100%;
     background-color: #1157401b;  /* your green tint */
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 0 0 15px;
     z-index: -1;
   }
 
@@ -1294,31 +1286,9 @@ ol li {
     width: 83%;                   /* same as your text-column % */
     height: 100%;
     background-color: #1157401b;  /* your green tint */
-    border-radius: 15px 15px 15px 15px;  /* round only the left corners */
+    border-radius: 15px 0 0 15px;  /* round only the left corners */
     z-index: -1;
   }
   
-  /* disable inner stripe so only the outer .skills-section bg shows */
-.skills-grid::before {
-    display: none !important;
-  }
-
-  .skills-grid {
-    /* round only the top-right & bottom-right corners */
-    border-radius: 0 15px 15px 0;
-    overflow: hidden; /* make sure nothing pokes outside the rounded corners */
-  }
-
-  .skills-section {
-    /* round all four corners */
-    border-radius: 15px;
-  }
   
-
-  /* -------------------------------------------------------------------
-   Override all of your previous .skills-section spacing in one shot
-   ------------------------------------------------------------------- */
-.skills-section {
-    margin-top: 0    !important;  /* no gap above the green box */
-    padding-top: -5em !important; /* just a little breathing room inside */
-  }
+  

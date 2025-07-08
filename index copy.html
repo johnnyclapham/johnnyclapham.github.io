@@ -23,9 +23,6 @@
           I'm a Computer Science Ph.D. candidate and research assistant at The College of William and Mary. I am part of the <a href="https://gang-zhou.com/healthcomp-lab/">HealthComp</a> lab and am advised by <a href="https://gang-zhou.com/">Dr. Gang Zhou</a>.
         </p>
         <p class="paraText">
-          <strong>I am actively seeking industry research and development oppertunities.</strong>
-        </p>
-        <p class="paraText">
           I create mobile and wearable technology systems to address real-world health and nutrition challenges. My research centers on machine learning models that localize and measure human movement from untrimmed inertial sensor data. I'm translating this work into real-world impact through Motion Medix, a Virginia-based startup.
         </p>
         <!-- etc -->
@@ -123,83 +120,93 @@
 
 
 
-    <div class="skills-section">
-    <section class="skills-grid">
-      <!-- heading + intro -->
-      <h3 class="infoHeading">Skills.</h3>
-      <p class="paraText">I work with multidisciplinary teams to turn ideas into results.</p>
-    
-      <!-- 1st skill -->
-      <div class="skill-text">
+
+
+
+
+
+
+
+
+
+
+<!-- Skills Section -->
+<div class="column_set skills-row" style="margin-top:3em;">
+  <!-- 90% width for all your text -->
+  <span class="column_left" style="flex:0 0 83%;">
+
+    <h3 class="infoHeading">Skills.</h3>
+    <p class="paraText">I work with multidisciplinary teams to turn ideas into results.</p>
+
+    <!-- wrap each paragraph in its own block so we can line them up -->
+    <div class="skill-text-block">
+      <p class="paraText">
         <strong>Create End-to-End Machine-Learning Sensor Systems.</strong>
         Interview target users and domain experts to define the problem. Capture and label sensor data. Architect and train models that perform the target action (e.g., localize and measure movement actions). Select hardware and build the software pipeline to integrate data collection and model inference.
-      </div>
-      <div class="skill-icon">
-        <img src="assets/neural.png" alt="ML Icon">
-      </div>
-    
-      <!-- 2nd skill -->
-      <div class="skill-text">
-        <strong>Prototype, Deploy &amp; Assess Usability.</strong>
+      </p>
+    </div>
+
+    <div class="skill-text-block">
+      <p class="paraText">
+        <strong>Prototype, Deploy & Assess Usability.</strong>
         Build a field-ready prototype and deploy it in the target environment. Stream live sensor inputs and run inferences to evaluate performance against KPIs. Collect runtime performance metrics and conduct user interviews to validate UX and workflow. Iterate on hardware and software based on real-world feedback.
-      </div>
-      <div class="skill-icon">
-        <img src="assets/prototype.png" alt="Prototype Icon">
-      </div>
-    
-      <!-- 3rd skill -->
-      <div class="skill-text">
-        <strong>Take Over &amp; Maintain Existing Systems.</strong>
+      </p>
+    </div>
+
+    <div class="skill-text-block">
+      <p class="paraText">
+        <strong>Take Over & Maintain Existing Systems.</strong>
         Meet with stakeholders to gather technical insights, expectations, and goals. Review and update existing codebases, hardware setups, and documentation. Refine requirements and evolve functionality based on learned information. Deploy updates to production, monitor live performance, and troubleshoot issues. Onboard and train new team members on system architecture and workflows.
-      </div>
-      <div class="skill-icon">
-        <img src="assets/knowledge.png" alt="Maintain Icon">
-      </div>
-    
-      <!-- 4th skill -->
-      <div class="skill-text">
+      </p>
+    </div>
+
+    <div class="skill-text-block">
+      <p class="paraText">
         <strong>Commercialize Technical Innovations.</strong>
         Ideate and refine product concepts that fit market needs. Identify and prioritize target customer segments. Test and iterate value-proposition hypotheses via customer interviews. Craft and deliver pitches to angel investors, funding committees, and competitions. Produce engaging video demos and secure funding.
-      </div>
-      <div class="skill-icon">
-        <img src="assets/commercialization.png" alt="Commercialize Icon">
-      </div>
-    
-      <!-- 5th skill -->
-      <div class="skill-text">
-        <strong>Communicate &amp; Engage Audiences.</strong>
+      </p>
+    </div>
+
+    <div class="skill-text-block">
+      <p class="paraText">
+        <strong>Communicate & Engage Audiences.</strong>
         Tailor content to varied levels of technical knowledge. Engage in community events and public presentations. Lecture graduate seminars and mentor academic discussions. Present papers and posters at conferences and symposiums. Conduct outreach and recruit participants for user studies.
-      </div>
-      <div class="skill-icon">
-        <img src="assets/present.png" alt="Communicate Icon">
-      </div>
-    
-      <!-- 6th skill -->
-      <div class="skill-text">
-        <strong>Mentor Students &amp; Support Team Development.</strong>
+      </p>
+    </div>
+
+    <div class="skill-text-block">
+      <p class="paraText">
+        <strong>Mentor Students & Support Team Development.</strong>
         Guide students through technical problem-solving and pair-programming. Coach presentation skills and teaching-assessment projects. Provide code reviews and debugging support. Assist new students with success strategies.
-      </div>
-      <div class="skill-icon">
-        <img src="assets/mentor.png" alt="Mentor Icon">
-      </div>
-    
-      <!-- 7th skill -->
-      <div class="skill-text">
-        <strong>Visualize &amp; Simplify Complex Systems.</strong>
+      </p>
+    </div>
+
+    <div class="skill-text-block">
+      <p class="paraText">
+        <strong>Visualize & Simplify Complex Systems. </strong>
         Create clear, engaging architecture diagrams and workflow visuals. Distill detailed processes into intuitive, easy-to-understand schematics. Balance aesthetic appeal with all necessary technical detail. Design visuals and explanations to help non-technical stakeholders understand complex systems.
-      </div>
-      <div class="skill-icon">
-        <img src="assets/diagram.png" alt="Visualize Icon">
-      </div>
-    
-      <!-- add more pairs here as needed… -->
-    </section>
-  </div>
+      </p>
+    </div>
 
+    <!-- repeat skill-text-block for each of your remaining skills… -->
 
+  </span>
 
+  <!-- 10% width column just for icons -->
+  <span class="column_right" style="flex:0 0 10%; align-self: flex-start;">
 
+    <img class="skill-icon" src="assets/neural.png"       alt="ML Icon">
+    <img class="skill-icon" src="assets/prototype.png" alt="Prototype Icon">
+    <img class="skill-icon" src="assets/knowledge.png"  alt="Maintain Icon">
+    <img class="skill-icon" src="assets/commercialization.png" alt="Commercialize Icon">
+    <img class="skill-icon" src="assets/present.png" alt="Communicate Icon">
+    <img class="skill-icon" src="assets/mentor.png" alt="Mentor Icon">
+    <img class="skill-icon" src="assets/diagram.png" alt="Visualize Icon">
 
+    <!-- one <img> per skill, in the same order as your text blocks -->
+
+  </span>
+</div>
 
 
 

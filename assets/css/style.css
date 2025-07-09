@@ -4,6 +4,14 @@
     box-sizing: border-box;
   }
 
+  /* at the top of your stylesheet */
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  font-size: 1.5vw;    /* or switch to rem/em: e.g. 1rem (16px) for more predictability */
+  line-height: 1.4;     /* optional, for readability */
+}
+
 @import "";
 .tight {
     padding: 0px;
@@ -1549,10 +1557,37 @@ ol li {
     color:        #000;
     /* margin:       0  top 1.5em bottom 0; */
   }
+
+  .skill-text {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 1.5vw;    /* match your .paraText size */
+    line-height: 1.4;     /* tweak for readability */
+    color: #000;          /* optional: same text color */
+    margin: 0;            /* reset any default margins */
+    text-shadow: #115740;
+  }
   
   /* bump the inline <strong> up just a hair */
   .skill-text > strong {
     display:     block;        
     font-size:   1.7vw;        /* just a bit bigger than the body */
     margin-bottom: 0.5em;
+  }
+
+  .paraText,
+.skill-text {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  font-size: 1.5vw;    /* exactly what .paraText uses */
+  line-height: 1.4;
+  color: #000;
+  margin: 0;           /* if you’d like to reset any default gaps */
+  margin-bottom: 1em;
+}
+
+/* inside your skills grid, shrink the gap after the intro paragraph */
+.skills-grid > .paraText {
+    margin-top: -1em;  /* or whatever “tiny” gap you prefer */
+    margin-bottom: -1em;
   }

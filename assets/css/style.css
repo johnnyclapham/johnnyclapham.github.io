@@ -1580,10 +1580,11 @@ ol li {
   font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
   font-size: 1.5vw;    /* exactly what .paraText uses */
-  line-height: 1.4;
+  line-height: 1.1;
   color: #000;
   margin: 0;           /* if you’d like to reset any default gaps */
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em
 }
 
 /* inside your skills grid, shrink the gap after the intro paragraph */

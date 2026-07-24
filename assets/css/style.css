@@ -1638,3 +1638,64 @@ ol li {
     margin-top: -1em;  /* or whatever “tiny” gap you prefer */
     margin-bottom: -1em;
   }
+
+/* ── Mobile: stack columns, switch fluid vw sizing for a readable floor ── */
+@media (max-width: 768px) {
+  .column_set {
+    flex-direction: column;
+  }
+
+  .column_set > .column_left,
+  .column_set > .column_right,
+  .column_set > .column_left_50,
+  .column_set > .column_right_50 {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+  }
+
+  .infoHeading,
+  .skills-section .infoHeading {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+
+  p,
+  .paraText,
+  .skill-text,
+  .skills-section .skill-text {
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.5;
+  }
+
+  .skill-text strong,
+  .skill-text > strong,
+  .skills-section .skill-text strong {
+    font-size: clamp(16px, 4.5vw, 19px);
+  }
+
+  .topnav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em 1em;
+    text-align: center;
+  }
+
+  .topnav a {
+    font-size: clamp(15px, 4vw, 18px);
+    padding: 0.4em 0.3em;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-section::before {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .skill-icon,
+  .skills-grid .skill-icon,
+  .skills-section .skills-grid .skill-icon {
+    display: none !important;
+  }
+}

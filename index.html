@@ -1,11 +1,19 @@
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-
-
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Johnny Clapham - PhD Candidate</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=20260724b">
+  <meta name="description" content="Johnny Clapham — Computer Science Ph.D., Delivery Operations Lead at Handshake AI. Building machine-learning sensor systems for healthy aging, movement measurement, and electrolyte tracking.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Johnny Clapham">
+  <meta property="og:description" content="Computer Science Ph.D. and Delivery Operations Lead at Handshake AI, building machine-learning sensor systems for health and aging.">
+  <meta property="og:image" content="https://johnnyclapham.github.io/assets/1783758075005.png">
+  <meta property="og:url" content="https://johnnyclapham.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Johnny Clapham">
+  <meta name="twitter:description" content="Computer Science Ph.D. and Delivery Operations Lead at Handshake AI, building machine-learning sensor systems for health and aging.">
+  <meta name="twitter:image" content="https://johnnyclapham.github.io/assets/1783758075005.png">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260724d">
   <link rel="icon" href="assets/logo.ico" />
 </head>
 <body>
@@ -20,7 +28,7 @@
     </div>
     <div class="space"></div>
 
-    <div class="column_set">
+    <div class="column_set reveal">
       <span class="column_left">
         <h3 class="infoHeading">Hello! I'm Johnny</h3>
         <hr style="border: 0; border-top: 0px solid #ccc; margin: 0em 0;">
@@ -59,9 +67,10 @@
     </div>
 
     <!-- NEW: Movement Measurement section -->
-    <div class="column_set" style="margin-top:2em;">
+    <div class="column_set reveal" style="margin-top:2em;">
       <span class="column_left_50">
         <h3 class="infoHeading">Movement Measurement</h3>
+        <span class="status-pill">✅ Peer-Reviewed Publication</span>
         <p class="paraText">
           <b>Healthy Aging Through Movement Insights</b>
         </p>
@@ -86,9 +95,10 @@
     </div>
 
     <!-- NEW: Electrolyte Measurement section -->
-    <div class="column_set" style="margin-top:2em;">
+    <div class="column_set reveal" style="margin-top:2em;">
       <span class="column_left_50">
         <h3 class="infoHeading">Electrolyte Measurement</h3>
+        <span class="status-pill">✅ Peer-Reviewed Publication</span>
         <p class="paraText">
           <b>Electrolyte Sensing, Anywhere</b>
         </p>
@@ -144,7 +154,7 @@
 
 
 
-    <div class="skills-section">
+    <div class="skills-section reveal">
     <section class="skills-grid">
       <!-- heading + intro -->
       <h3 class="infoHeading">Skills</h3>
@@ -225,5 +235,22 @@
 
 
   </div>
+
+  <script>
+    var revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      revealEls.forEach(function (el) { revealObserver.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('reveal-visible'); });
+    }
+  </script>
 </body>
 </html>
